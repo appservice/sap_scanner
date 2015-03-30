@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">-->
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ScrlView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/autoCompleteTextViewMpkRwActiv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            tools:context=".RwActivity"
+            android:gravity="right">
+
+            <ImageButton
+                android:id="@+id/fragment_scan_search_ibtn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:layout_marginLeft="40dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ic_search"
+                android:minWidth="65dp"
+                android:minHeight="65dp"
+                />
+            <!--android:layout_alignTop="@+id/imgBtnScanRwActiv"-->
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/fragment_scan_search_ibtn_scan"
+                android:layout_alignRight="@+id/fragment_scan_search_ibtn_scan"
+                android:layout_marginRight="10dp"
+                android:text="@string/label_scan"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <ImageButton
+                android:id="@+id/fragment_scan_search_ibtn_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40dp"
+                android:src="@drawable/ic_button_pz" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/textView5"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/label_name" />
+
+            <EditText
+                android:id="@+id/fragment_scan_search_tv_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/fragment_scan_search_tv_name"
+                android:layout_below="@+id/fragment_scan_search_ibtn_search"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/btn_black"
+                android:cursorVisible="false"
+                android:editable="false"
+                android:maxLength="18"
+                android:text=""
+                android:textSize="22sp"
+                android:textColor="#FAFAFA"
+
+                android:gravity="left"
+                android:autoText="false"
+                android:minWidth="220dip" />
+
+            <TextView
+                android:id="@+id/fragment_scan_search_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView6"
+                android:layout_marginLeft="3dp"
+                android:layout_toRightOf="@+id/textView6"
+                android:text=""
+                android:textStyle="bold"
+                android:layout_alignBottom="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/textView6"
+                android:layout_marginTop="15dp"
+                android:text="@string/label_amount"
+                android:layout_below="@+id/fragment_scan_search_tv_name" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/fragment_scan_search_tv_index"
+                android:layout_alignBottom="@+id/fragment_scan_search_tv_index"
+                android:layout_alignRight="@+id/textView6"
+                android:text="@string/label_index" />
+
+            <TextView
+                android:id="@+id/fragment_scan_search_tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fragment_scan_search_tv_name"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/textView8"
+                android:gravity="right"
+                android:minLines="1"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="@string/label_search_in_db"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_alignLeft="@+id/fragment_scan_search_ibtn_search"
+                android:layout_marginLeft="-7dp" />
+
+       <!--     <TextView
+                android:id="@+id/textViewUnitRwActiv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text=""
+                android:layout_below="@+id/textViewAmountRwActiv"
+                android:layout_toRightOf="@+id/textView8" />-->
+
+            <!--android:layout_alignParentBottom="true"
+             android:layout_toRightOf="@+id/imgBtnSearchRwActiv"-->
+
+            <!--android:layout_alignParentBottom="true"-->
+
+            <!--<TextView
+                android:id="@+id/textViewStockRwActiv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textViewUnitRwActiv"
+                android:layout_alignBottom="@+id/textViewUnitRwActiv"
+                android:layout_toRightOf="@+id/textViewUnitRwActiv"
+                android:layout_marginLeft="10dp"
+                android:text="" />-->
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+<!--</RelativeLayout>-->

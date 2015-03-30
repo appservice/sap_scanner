@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SAP Skanner</string>
+    <string name="menu_settings">Ustawienia</string>
+    <string name="title_activity_main">Skaner kodów</string>
+    <string name="btn_rw_main_activ_text">RW</string>
+    <string name="btn_pz_main_activ_text">PZ</string>
+    <string name="btn_serach_main_activ_text">Szukaj</string>
+    <string name="btn_settings_main_activ_text">Ustawienia</string>
+    <string name="pref_renew_mat_dat_title">Załaduj bazę</string>
+    <string name="pref_renew_mat_dat_sum">Kopiuje bazę materiałów z pliku zrzut_stanu.xls
+        Plik musi zawierać kolejno kolumny z sap: Materiał|Krótki tekst mat.|Podst. jedn. miary|Nieogranicz.wykorz.|Skład</string>
+    <string name="txt_index_search_activ">Index:</string>
+    <string name="txt_name_search_activ">Nazwa:</string>
+    <string name="txt_stock_search_activ">Skład:</string>
+    <string name="btn_search_activ">Szukaj</string>
+    <string name="check_box_search_view">Ilość większa od zera</string>
+    <string name="is_only_digits_title">Index liczbowy</string>
+    <string name="pref_is_only_digits_sum">Czy w polu indeks używać tylko cyfr?</string>
+    <string name="toast_text_set_amount_pz_activ">Nie dodano. Podaj ilość!</string>
+    <string name="delete">Kasuj</string>
+    <string name="add">Dodaj</string>
+    <string name="menu_add">Dodaj</string>
+    <string name="tvMpkNameString">Nazwa maszyny/linii:</string>
+    <string name="tvMpkValueString">Wartość MPK: </string>
+    <string name="cancel">Anuluj</string>
+    <string name="dialogMpkTitle">Dodaj MPK</string>
+    <string name="dialogMpkMessage">Wprowadź dane:</string>
+    <string name="pref_flash">Ustawienia lampy</string>
+    <string name="title_activity_preferences">Preference</string>
+    <string name="tvMpkBudgetString">Budżet / Zlecenie</string>
+    <string name="menu_add_new_material">Dodaj nowy materiał</string>
+    <string name="menu_pz_add_new_material">Dodaj Materiał</string>
+    <string name="pref_is_auto_flash_off_title">Automatyczna lampa</string>
+    <string name="pref_is_auto_flash_off_summ">Automatyczne wyłączanie lampy po zeskanowaniu kodu QR.</string>
+    <string name="hello_world">Program został opracowany przez \n Łukasza Mochel</string>
+    <string name="title_activity_new_material">MainActivity</string>
+    <string name="btnTextAddActiv">Dodaj</string>
+    <string name="textViewTitleAddActiv">Dodaj nowy Materiał do Bazy</string>
+    <string name="my_pref_flash">pref_is_auto_flash_off</string>
+    <string name="is_auto_off_default">false</string>
+    <string name="barcode_scan_intent_address">com.google.zxing.client.android.SCAN</string>
+    <string name="barcode_scanner_not_installed_message">Zainstaluj aplikację BarcodeScanner</string>
+    <string name="call_search_activity">IS_FROM_OTHER_ACTIVITY</string>
+
+    <string-array name="unit_types_add_activ">
+        <item>SZT</item>
+        <item>M</item>
+        <item>MM</item>
+        <item>KG</item>
+        <item>L</item>
+        <item>ROL</item>
+        <item>KOM</item>
+    </string-array>
+
+    <string name="title_activity_rw">RW</string>
+    <string name="sdcard_temp">/sdcard/temp.txt</string>
+    <string name="sdcard_magazyn">/sdcard/magazyn.txt</string>
+    <string name="excel_with_materials">zrzut_stanu.xls</string>
+    <string name="msg_install_barcode_scanner">Zainstaluj aplikację BarcodeScaner</string>
+    <string name="loading_text">Ładuję…</string>
+    <string name="title_activity_info">O programie</string>
+    <string name="action_settings">Ustawienia</string>
+    <string name="date_format_out">E dd.MM.yy \' godz: \'HH.mm.ss</string>
+    <string name="date_format_standard">yyyy-MM-dd HH:mm:ss</string>
+    <string name="main_folder">Sap_skaner</string>
+    <string name="signatures_folder">Podpisy</string>
+    <string name="label_index">Index:</string>
+    <string name="label_name">Nazwa:</string>
+    <string name="label_amount">Ilość:</string>
+    <string name="label_unit">jedn.</string>
+    <string name="label_store">skład</string>
+    <string name="label_to_zero">Na zero</string>
+    <string name="label_mpk">MPK</string>
+    <string name="label_budget">Zlecenie</string>
+    <string name="label_btn_list">Lista</string>
+    <string name="label_btn_save">Zapisz</string>
+    <string name="label_scan">Skanuj</string>
+    <string name="label_search_in_db">Szukaj w bazie</string>
+    <string name="label_inventory">Inventaryzacja</string>
+    <string name="title_activity_pz_list">Lista PZ</string>
+    <string name="db_udated_message">Baza zaktualizowana \nilość wgranych materiałów:</string>
+    <string name="attention_message">Uwaga</string>
+    <string name="warning_do_not_found_file">W folderze %1$s nie znaleziono pliku: \n%2$s!</string>
+    <string name="warning_can_not_read_file">Problem z odczytem pliku: \n"%1$s</string>
+    <string name="warning_check_data_in_file">Sprawdź zgodność pliku %1$s z wymaganiami!\n
+                 Plik musi zawierać kolejno kolumny z sap: Materiał
+                |Krótki tekst mat.|Podst. jedn. miary|Nieogranicz.wykorz.|Skład</string>
+    <string name="warning_chose_budget_mpk">Wybierz MPK / zlecenie!</string>
+    <string name="warning_fill_amount">Wprowadź pobieraną ilość!</string>
+    <string name="warning_scan_material">Zeskanuj / wybierz pobierany materiał!</string>
+    <string name="imported_excel_file_name">zrzut_stanu.xls</string>
+    <string name="warning_founded">Odnaleziono %1$s :</string>
+    <string name="message_collected">Wydano: </string>
+    <string name="barcode_encode_intent_address">com.google.zxing.client.android.ENCODE</string>
+    <string name="title_activity_file_chooser">Pliki</string>
+    <string name="warning_incorrect_data_in_imported_excel_file">Kolumna 4 musi zawierać ilości!
+Sprawdź kolumnę 4 wiersz: </string>
+    <string name="title_activity_inventory_list">Lista zinteryzowanych</string>
+
+</resources>

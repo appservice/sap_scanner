@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/activity_search_collected_et_index"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:maxLength="18"
+        android:singleLine="true"
+        android:layout_gravity="center|left"
+        android:layout_marginRight="30dip"
+        android:layout_alignParentRight="true"
+        android:ems="10">
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/activity_search_collected_et_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/activity_search_collected_et_index"
+        android:layout_below="@+id/activity_search_collected_et_index"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:maxLines="1"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/activity_search_collected_et_mpk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/activity_search_collected_et_name"
+        android:layout_below="@+id/activity_search_collected_et_name"
+        android:layout_marginTop="18dp"
+        android:ellipsize="end"
+        android:fitsSystemWindows="true"
+        android:maxLength="6"
+        android:singleLine="true"
+        android:ems="4" />
+
+    <TextView
+        android:id="@+id/textViewNameSearchPickedActiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/activity_search_collected_et_name"
+        android:layout_alignBottom="@+id/activity_search_collected_et_name"
+        android:layout_alignParentLeft="true"
+        android:text="@string/txt_name_search_activ"
+        android:gravity="right"
+        android:layout_alignRight="@+id/textViewIndexSearchPickedActiv" />
+
+    <TextView
+        android:id="@+id/textViewStockSearchPickedActiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/activity_search_collected_et_mpk"
+        android:layout_alignBottom="@+id/activity_search_collected_et_mpk"
+        android:layout_alignRight="@+id/textViewNameSearchPickedActiv"
+        android:text="MPK:" />
+
+    <TextView
+        android:id="@+id/textViewIndexSearchPickedActiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/activity_search_collected_et_index"
+        android:layout_alignBottom="@+id/activity_search_collected_et_index"
+        android:text="@string/txt_index_search_activ"
+        android:layout_marginRight="10dip"
+        android:layout_toLeftOf="@+id/activity_search_collected_et_index"
+        android:gravity="right" />
+
+    <Button
+        android:id="@+id/activity_search_collected_btn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="@string/btn_search_activ"
+        android:layout_below="@+id/activity_search_collected_et_mpk" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zlecenie:"
+        android:id="@+id/textViewBudgetSearchPickedActiv"
+        android:layout_alignRight="@+id/textViewStockSearchPickedActiv"
+        android:layout_below="@+id/activity_search_collected_et_mpk"
+        android:layout_marginTop="30dip" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/activity_search_collected_et_budget"
+        android:layout_alignLeft="@+id/activity_search_collected_et_mpk"
+        android:singleLine="true"
+
+        android:layout_alignBaseline="@+id/textViewBudgetSearchPickedActiv"
+        android:ems="10" />
+
+</RelativeLayout>

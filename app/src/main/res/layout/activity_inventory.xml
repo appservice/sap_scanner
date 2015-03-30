@@ -1,0 +1,209 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    tools:context=".activities.InventoryActivity">
+
+
+    <ImageButton
+        android:id="@+id/inventory_activity_ibtn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_marginLeft="40dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/ic_search"
+       />
+    <!--android:layout_alignTop="@+id/imgBtnScanInvActiv"-->
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/inventory_activity_ibtn_scan"
+        android:layout_alignRight="@+id/inventory_activity_ibtn_scan"
+        android:layout_marginRight="10dp"
+        android:text="Skanuj"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <ImageButton
+        android:id="@+id/inventory_activity_ibtn_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp"
+        android:src="@drawable/ic_button_pz" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView5"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="Nazwa:" />
+
+    <EditText
+        android:id="@+id/inventory_activity_et_index"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inventory_activity_ibtn_search"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/btn_black"
+        android:cursorVisible="false"
+        android:editable="false"
+        android:maxLength="18"
+        android:text=""
+        android:textSize="22sp"
+        android:textColor="#FAFAFA"
+        android:gravity="left"
+        android:autoText="false"
+        android:minWidth="220dip"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:id="@+id/inventory_activity_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_marginLeft="3dp"
+        android:layout_toRightOf="@+id/textView6"
+        android:text=""
+        android:textStyle="bold"
+        android:layout_alignBottom="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textView6"
+        android:layout_marginTop="15dp"
+        android:text="Ilość:"
+        android:layout_below="@+id/inventory_activity_tv_name" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/inventory_activity_et_index"
+        android:layout_alignBottom="@+id/inventory_activity_et_index"
+        android:layout_alignRight="@+id/textView6"
+        android:text="Index:" />
+
+    <TextView
+        android:id="@+id/inventory_activity_tv_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inventory_activity_tv_name"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/textView8"
+        android:gravity="right"
+        android:minLines="1"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView8"
+        android:layout_alignParentTop="true"
+        android:text="Szukaj w bazie"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/inventory_activity_tv_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/inventory_activity_et_value"
+        android:layout_alignBottom="@+id/inventory_activity_et_value"
+        android:layout_toRightOf="@+id/inventory_activity_et_value"
+        android:layout_marginLeft="4dp"
+        android:text="" />
+
+    <Button
+        android:id="@+id/inventory_activity_btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zapisz"
+        android:width="100dp"
+        android:layout_below="@+id/inventory_activity_et_value"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+
+        />
+    <!--android:layout_alignParentBottom="true"
+     android:layout_toRightOf="@+id/imgBtnSearchInvActiv"-->
+
+    <Button
+        android:id="@+id/inventory_activity_btn_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Miejsce"
+        android:layout_gravity="center"
+        android:layout_alignParentEnd="false"
+
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:id="@+id/btnShowListInvAcitv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lista"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:width="60dp"
+        android:enabled="true" />
+
+
+    <!--android:layout_alignParentBottom="true"-->
+    <EditText
+        android:id="@+id/inventory_activity_et_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inventory_activity_tv_amount"
+        android:layout_marginTop="15dp"
+        android:ems="4"
+        android:inputType="numberDecimal"
+        android:layout_toRightOf="@+id/textView8"
+        android:layout_marginLeft="10dip">
+
+
+    </EditText>
+
+
+    <TextView
+        android:id="@+id/inventory_activity_tv_stock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/inventory_activity_tv_unit"
+        android:layout_alignBottom="@+id/inventory_activity_tv_unit"
+        android:layout_toRightOf="@+id/inventory_activity_tv_unit"
+        android:layout_marginLeft="10dp"
+        android:text="" />
+<!---->
+    <TextView
+        android:id="@+id/inventory_activity_tv_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+
+        android:hint="Miejsce inwentaryzacji"
+        android:editable="false"
+        android:textColor="@android:color/white"
+        android:layout_alignBaseline="@+id/inventory_activity_btn_place"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:text="miejsce inwentaryzacji"
+        android:gravity="center" />
+
+
+</RelativeLayout>

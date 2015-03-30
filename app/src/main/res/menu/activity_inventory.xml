@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sapScanner="http://schemas.android.com/apk/res-auto">
+
+   <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_menu_add_mpk"
+        android:title="menu"
+
+        sapScanner:showAsAction="always|withText">
+        <menu>
+            <item
+                android:id="@+id/menu_delate"
+                android:title="usuń"
+                android:orderInCategory="2"
+
+                sapScanner:showAsAction="ifRoom|withText"
+                android:icon="@drawable/ic_status_dialog_error" />
+            <item
+                android:id="@+id/men_inventory_add"
+                android:orderInCategory="1"
+                sapScanner:showAsAction="ifRoom|withText"
+
+                android:title="Dodaj"
+                android:icon="@drawable/ic_add" />
+
+            <item
+                android:id="@+id/menu_share"
+                android:title="Ustawienia"
+                sapScanner:showAsAction="ifRoom|withText"
+                android:icon="@drawable/ic_settings"  />
+       </menu>
+
+    </item>
+</menu>
+
+    <!--         android:showAsAction="always|withText"
+    android:showAsAction="withText|ifRoom"
+                android:showAsAction="ifRoom|withText"
+-->

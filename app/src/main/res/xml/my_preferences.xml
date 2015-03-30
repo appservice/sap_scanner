@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference
+        android:key="pref_renew_mat_dat"
+        android:title="@string/pref_renew_mat_dat_title"
+        android:summary="@string/pref_renew_mat_dat_sum" />
+    <Preference
+        android:key="pref_export_mat_dat"
+        android:title="Eksportuj bazę"
+        android:summary="Eksportuje bazę materiałów do pliku xls"
+        android:icon="@drawable/ic_excel2"/>
+    <CheckBoxPreference
+        android:key="pref_is_only_digits"
+        android:title="@string/is_only_digits_title"
+        android:summary="@string/pref_is_only_digits_sum" />
+    <CheckBoxPreference
+        android:key="pref_is_auto_flash_off"
+        android:title="@string/pref_is_auto_flash_off_title"
+        android:summary="@string/pref_is_auto_flash_off_summ" />
+    <EditTextPreference
+        android:key="pref_default_budget"
+        android:title="Domyślny budżet"
+        android:summary="Ustaw domyślny budżet zużycia" />
+    <Preference
+        android:key="pref_about_program"
+        android:title="O programie"
+        android:summary="Autor: Łukasz Mochel" />
+
+</PreferenceScreen>

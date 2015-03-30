@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="eu.appservice.sap_scanner" >
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat" >
+        <activity
+            android:name=".activities.MainActivity"
+            android:label="@string/title_activity_main"
+            android:permission="android.permission.VIBRATE"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Activity Settings -->
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:parentActivityName=".activities.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.appservice.sap_scanner.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.SearchActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Activity PZ -->
+        <activity
+            android:name=".activities.PzActivity"
+            android:label="PZ"
+            android:parentActivityName=".activities.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.appservice.sap_scanner.activities.MainActivity" />
+        </activity>
+
+        <!-- Activity  New Material -->
+        <activity
+            android:name=".activities.NewMaterialActivity"
+            android:label="Dodaj materiał"
+            android:parentActivityName=".activities.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.appservice.sap_scanner.activities.MainActivity" />
+        </activity>
+
+        <!-- Activity RW -->
+        <activity
+            android:name=".activities.RwActivity"
+            android:label="@string/title_activity_rw"
+            android:parentActivityName=".activities.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.appservice.sap_scanner.activities.MainActivity" />
+        </activity>
+
+        <!-- Activity MPK LIST -->
+        <activity
+            android:name=".activities.MpkListActivity"
+            android:label="Lista MPK"
+            android:parentActivityName=".activities.RwActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.appservice.sap_scanner.activities.RwActivity" />
+        </activity>
+        >
+
+        <!-- Activity Collected Material List -->
+        <activity
+            android:name=".activities.CollectedMaterialsListActivity"
+            android:label="Lista RW"
+            android:parentActivityName=".activities.RwActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.appservice.sap_scanner.activities.RwActivity" />
+        </activity>
+
+        <!-- Activity INVENTORY -->
+        <activity
+            android:name=".activities.InventoryActivity"
+            android:label="Inwentaryzacja"
+            android:parentActivityName=".activities.MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.appservice.sap_scanner.activities.MainActivity" />
+        </activity>
+
+        <!-- Activity FingerPaint -->
+        <activity
+            android:name=".activities.FingerPaintActivity"
+            android:label="Podpis"
+            android:screenOrientation="landscape" />
+
+        <!-- Activity  Search In Collected Activity............................ -->
+        <activity
+            android:name=".activities.SearchCollectedActivity"
+            android:label="Szukaj w pobranych"
+            android:parentActivityName=".activities.CollectedMaterialsListActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.appservice.sap_scanner.activities.CollectedMaterialsListActivity" />
+        </activity>
+        <!-- <activity android:name="eu.appservice." android:screenOrientation="portrait"></activity> -->
+
+
+        <!-- ................ Activity FingerPaint............................. -->
+        <activity
+            android:name=".activities.TestActivity"
+            android:label="Test Activity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.appservice.sap_scanner.activities.CollectedMaterialsListActivity" />
+        </activity>
+
+        <!-- ......................Info Activity........................................ -->
+        <activity
+            android:name=".activities.InfoActivity"
+            android:label="@string/title_activity_info"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.appservice.sap_scanner.activities.SettingsActivity" />
+        </activity>
+
+        <!-- .................pz_list_activity........................................ -->
+        <activity
+            android:name=".activities.PzListActivity"
+            android:label="@string/title_activity_pz_list"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.appservice.sap_scanner.activities.PzActivity" />
+        </activity>
+        <activity
+            android:name=".activities.fileChooser.FileChooserActivity"
+            android:label="@string/title_activity_file_chooser" >
+        </activity>
+        <activity
+            android:name=".activities.InventoryListActivity"
+            android:label="@string/title_activity_inventory_list"
+            android:parentActivityName=".activities.InventoryActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.appservice.sap_scanner.activities.InventoryActivity" />
+        </activity>
+    </application>
+
+</manifest>

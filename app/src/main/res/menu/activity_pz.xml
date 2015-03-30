@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sapScanner="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_pz_show_preferences"
+        android:title="@string/menu_settings"
+        android:icon="@drawable/ic_settings"
+        sapScanner:showAsAction="never|withText"/>
+
+    <item
+        android:id="@+id/menu_pz_add_new_material"
+        android:title="@string/menu_pz_add_new_material"
+        android:icon="@drawable/ic_add"
+        sapScanner:showAsAction="never|withText"/>
+
+
+</menu>

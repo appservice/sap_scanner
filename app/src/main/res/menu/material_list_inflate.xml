@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sapScanner="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/schowPickedSearchActivity"
+        android:title="Wyszukaj"
+        sapScanner:showAsAction="ifRoom|withText"/>
+    <item android:id="@+id/materialListInflateMenuSign"
+        android:title="Podpisz"
+        sapScanner:showAsAction="ifRoom|withText"/>
+
+</menu>

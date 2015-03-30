@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sapScanner="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_finger_paint_clear"
+        android:title="Wyczyść    "
+
+        sapScanner:showAsAction="ifRoom|withText"
+        sapScanner:icon="@drawable/ic_status_dialog_error"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@drawable/ic_status_dialog_error"
+/>
+    <!-- never|-->
+    <item
+        android:id="@+id/menu_finger_paint_save"
+        android:title="Zapisz    "
+        sapScanner:showAsAction="ifRoom|withText"
+        sapScanner:icon="@drawable/ic_status_dialog_ok"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@drawable/ic_status_dialog_ok"
+
+       />
+
+
+</menu>

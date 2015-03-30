@@ -1,0 +1,291 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/av"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RwActivity"
+    android:gravity="right">
+
+    <ScrollView
+        android:id="@+id/ScrlView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/autoCompleteTextViewMpkRwActiv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            tools:context=".RwActivity"
+            android:gravity="right">
+
+            <ImageButton
+                android:id="@+id/activity_rw_ibtn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:layout_marginLeft="40dp"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ic_search"
+                android:minWidth="65dp"
+                android:minHeight="65dp"
+                android:contentDescription="" />
+            <!--android:layout_alignTop="@+id/imgBtnScanRwActiv"-->
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/activity_rw_ibtn_scan"
+                android:layout_alignRight="@+id/activity_rw_ibtn_scan"
+                android:layout_marginRight="10dp"
+                android:text="Skanuj"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <ImageButton
+                android:id="@+id/activity_rw_ibtn_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40dp"
+                android:src="@drawable/ic_button_pz" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/textView5"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Nazwa:" />
+
+            <EditText
+                android:id="@+id/activity_rw_tv_scanned_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/activity_rw_tv_scanned_name"
+                android:layout_below="@+id/activity_rw_ibtn_search"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/btn_black"
+
+                android:maxLength="18"
+                android:textSize="22sp"
+                android:textColor="#FAFAFA"
+                android:inputType=""
+                android:gravity="left"
+                android:autoText="false"
+                android:minWidth="220dip"
+                />
+<!--
+android:enabled="false"
+  android:editable="false"
+                android:cursorVisible="false"
+-->
+            <TextView
+                android:id="@+id/activity_rw_tv_scanned_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView6"
+                android:layout_marginLeft="3dp"
+                android:layout_toRightOf="@+id/textView6"
+                android:text=""
+                android:textStyle="bold"
+                android:layout_alignBottom="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/textView6"
+                android:layout_marginTop="15dp"
+                android:text="Ilość:"
+                android:layout_below="@+id/activity_rw_tv_scanned_name" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/activity_rw_tv_scanned_index"
+                android:layout_alignBottom="@+id/activity_rw_tv_scanned_index"
+                android:layout_alignRight="@+id/textView6"
+                android:text="Index:" />
+
+            <TextView
+                android:id="@+id/activity_rw_tv_scanned_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/activity_rw_tv_scanned_name"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/textView8"
+                android:gravity="right"
+                android:minLines="1"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView8"
+                android:layout_alignParentTop="true"
+                android:text="Szukaj w bazie"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/activity_rw_tv_scanned_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/activity_rw_et_value"
+                android:layout_alignBottom="@+id/activity_rw_et_value"
+                android:layout_toRightOf="@+id/activity_rw_et_value"
+                android:layout_marginLeft="4dp"
+                android:text="" />
+
+            <Spinner
+                android:id="@+id/textViewStockRwActiv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/activity_rw_tv_scanned_unit"
+                android:layout_alignLeft="@+id/activity_rw_btn_signature"
+                android:layout_alignRight="@+id/activity_rw_ibtn_scan"
+                android:layout_alignTop="@+id/activity_rw_et_value"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/activity_rw_btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zapisz"
+                android:width="100dp"
+                android:layout_below="@+id/activity_rw_btn_mpk"
+                android:layout_marginTop="25dp"
+                android:layout_centerHorizontal="true"
+
+                />
+            <!--android:layout_alignParentBottom="true"
+             android:layout_toRightOf="@+id/imgBtnSearchRwActiv"-->
+
+            <Button
+                android:id="@+id/activity_rw_btn_mpk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="MPK"
+                android:layout_gravity="center"
+                android:layout_below="@+id/activity_rw_et_value"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentRight="false"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:id="@+id/activity_rw_btn_list_materials"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/activity_rw_btn_save"
+                android:layout_alignParentLeft="true"
+                android:text="Lista" />
+
+            <ImageButton
+                android:id="@+id/activity_rw_btn_signature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/activity_rw_btn_save"
+                android:layout_alignParentRight="true"
+                android:text="Podpis"
+                android:src="@drawable/ic_document_write"
+                android:layout_toRightOf="@+id/activity_rw_tv_budget" />
+            <!--android:layout_alignParentBottom="true"-->
+            <EditText
+                android:id="@+id/activity_rw_et_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/activity_rw_tv_scanned_amount"
+                android:layout_marginTop="15dp"
+                android:ems="4"
+                android:inputType="numberDecimal"
+                android:layout_toRightOf="@+id/textView8"
+                android:layout_marginLeft="10dip">
+
+
+            </EditText>
+
+            <TextView
+                android:id="@+id/row_list_collected_tv_budget_mpk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/activity_rw_et_value"
+                android:layout_toLeftOf="@+id/activity_rw_tv_scanned_amount"
+                android:text="Wydane:" />
+
+            <TextView
+                android:id="@+id/activity_rw_tv_mpk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/activity_rw_btn_mpk"
+                android:ems="6"
+                android:singleLine="true"
+                android:editable="false"
+                android:clickable="false"
+                android:focusable="true"
+                android:enabled="false"
+                android:layout_alignBaseline="@+id/activity_rw_btn_mpk"
+                android:layout_marginRight="20px"
+                android:gravity="right"
+                android:textColor="@android:color/background_light"
+                android:hint="MPK:" />
+
+            <TextView
+                android:id="@+id/activity_rw_tv_scanned_store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/activity_rw_tv_scanned_unit"
+                android:layout_alignBottom="@+id/activity_rw_tv_scanned_unit"
+                android:layout_toRightOf="@+id/activity_rw_tv_scanned_unit"
+                android:layout_marginLeft="10dp"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/activity_rw_tv_budget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/activity_rw_tv_mpk"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/activity_rw_btn_mpk"
+
+                android:hint="Zlecenie:"
+                android:editable="false"
+                android:textColor="@android:color/white" />
+
+            <CheckBox
+                android:id="@+id/activity_rw_chk_is_zero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:visibility="visible"
+                android:singleLine="false"
+                android:layout_alignParentLeft="false"
+                android:layout_alignWithParentIfMissing="false"
+                android:enabled="true"
+                android:focusable="false"
+                android:hint="na zero"
+                android:clickable="true"
+                android:layout_alignBaseline="@+id/activity_rw_et_value" />
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout><!-- <TextView
+            android:id="@+id/textViewIndexRwActiv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textViewNameRwActiv"
+            android:layout_below="@+id/imgBtnSearchRwActiv"
+            android:layout_marginTop="15dp"
+            android:text=""
+            android:textSize="20sp"
+             /> -->

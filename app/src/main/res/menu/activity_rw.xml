@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sapScanner="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_pz_show_preferences"
+        android:title="@string/menu_settings"
+        android:icon="@drawable/ic_settings"
+        sapScanner:showAsAction="never|withText|collapseActionView"
+        android:showAsAction="ifRoom|withText"
+        sapScanner:icon="@drawable/ic_settings"/>
+<!-- never|-->
+    <item
+        android:id="@+id/menu_rw_export_to_xls"
+        android:title="Eksportuj do pliku Excel"
+        android:icon="@drawable/ic_excel2"
+        sapScanner:showAsAction="never|withText|collapseActionView"
+        android:showAsAction="ifRoom|withText"
+        sapScanner:icon="@drawable/ic_excel2"/>
+
+
+</menu>

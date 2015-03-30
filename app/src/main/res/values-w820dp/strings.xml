@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="barcode_encode_intent_address">com.google.zxing.client.android.ENCODE</string>
+</resources>

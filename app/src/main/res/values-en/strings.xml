@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="label_amount">Amount:</string>
+    <string name="label_btn_list">List</string>
+    <string name="label_btn_save">Save</string>
+    <string name="label_budget">Budget</string>
+    <string name="label_index">Index:</string>
+    <string name="label_mpk">MPK</string>
+    <string name="label_name">Name:</string>
+    <string name="label_scan">Scan</string>
+    <string name="label_search_in_db">Search in DB</string>
+    <string name="label_store">store</string>
+    <string name="label_to_zero">To zero</string>
+    <string name="label_unit">unit</string>
+    <string name="loading_text">Loading...</string>
+    <string name="barcode_encode_intent_address">com.google.zxing.client.android.ENCODE</string>
+
+</resources>

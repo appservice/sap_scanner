@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+    tools:context=".activities.TestActivity">
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="eu.appservice.sap_scanner.activities.ScanSearchFragment"
+        android:id="@+id/fragment"
+        tools:layout="@layout/fragment_scan_search" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginRight="5dp"
+            android:layout_alignBaseline="@+id/test_activity_et_value"
+            android:layout_marginLeft="10dp"
+            android:text="@string/label_amount" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:id="@+id/test_activity_et_value"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_marginTop="15dp"
+            android:ems="4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_unit"
+            android:id="@+id/test_activity_tv_unit"
+            android:layout_alignBottom="@+id/test_activity_et_value"
+            android:layout_toRightOf="@+id/test_activity_et_value"
+            android:layout_marginLeft="15dp"
+            android:layout_alignBaseline="@+id/test_activity_et_value" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_store"
+            android:id="@+id/test_activity_tv_store"
+            android:layout_alignParentBottom="false"
+            android:layout_toRightOf="@+id/test_activity_tv_unit"
+            android:layout_marginLeft="15dp"
+            android:layout_alignBaseline="@+id/test_activity_et_value" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_mpk"
+            android:id="@+id/btnMpkTestActivity"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/test_activity_et_value"
+            android:layout_centerHorizontal="true"
+            android:onClick="mpkButtonClicked"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentRight="false"
+            android:layout_alignWithParentIfMissing="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_mpk"
+            android:id="@+id/test_activity_tv_mpk"
+            android:layout_toLeftOf="@+id/btnMpkTestActivity"
+            android:layout_alignBaseline="@+id/btnMpkTestActivity"
+            android:layout_marginRight="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_budget"
+            android:id="@+id/test_activity_tv_budget"
+            android:layout_toRightOf="@+id/btnMpkTestActivity"
+            android:layout_alignBaseline="@+id/btnMpkTestActivity"
+            android:layout_marginLeft="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_btn_save"
+            android:id="@+id/button"
+            android:layout_below="@+id/btnMpkTestActivity"
+            android:layout_marginTop="45dp"
+            android:layout_centerHorizontal="true"
+            android:onClick="saveButtonClicked"
+            android:width="100dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_btn_list"
+            android:id="@+id/button2"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="listButtonClicked" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_activity_chk_is_zero"
+            android:checked="false"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentEnd="false"
+            android:layout_alignBaseline="@+id/test_activity_tv_unit"
+            android:layout_toRightOf="@+id/test_activity_tv_store"
+            android:layout_marginLeft="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/label_to_zero"
+            android:id="@+id/textView2"
+            android:layout_alignStart="@+id/test_activity_chk_is_zero"
+            android:layout_marginBottom="5dp"
+            android:layout_alignTop="@+id/test_activity_chk_is_zero"
+            android:layout_marginLeft="-5dp"
+            android:gravity="center_vertical"
+            android:layout_alignLeft="@+id/test_activity_chk_is_zero" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pliki"
+            android:id="@+id/test_activity_btn_filelist"
+            android:layout_alignTop="@+id/button"
+            android:layout_alignLeft="@+id/test_activity_chk_is_zero"
+            android:layout_alignStart="@+id/test_activity_chk_is_zero"
+            android:onClick="onFileListButtonClick" />
+
+    </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
+

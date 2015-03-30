@@ -1,0 +1,21 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sapScanner="http://schemas.android.com/apk/res-auto">
+
+
+<item
+        android:id="@+id/menu_add"
+        android:title="@string/menu_add"
+
+        android:icon="@drawable/ic_add"
+        android:showAsAction="always|withText"
+        android:titleCondensed="@string/menu_add"
+        sapScanner:showAsAction="ifRoom|withText"
+
+        sapScanner:title="@string/menu_add"
+    tools:ignore="UnusedAttribute" />
+
+<!--sapScanner:icon="@drawable/ic_add"
+android:icon="@drawable/ic_add"
+ -->
+</menu>
