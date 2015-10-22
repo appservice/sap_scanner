@@ -43,7 +43,8 @@
         android:width="100dp"
         android:layout_marginTop="26dp"
         android:layout_below="@+id/activity_pz_et_value"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:focusableInTouchMode="true" />
 
     <TextView
         android:id="@+id/textView6"
@@ -90,8 +91,8 @@
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
 
-        android:layout_below="@+id/activity_pz_et_scanned_amount">
-
+        android:layout_below="@+id/activity_pz_et_scanned_amount"
+        android:nextFocusForward="@id/activity_pz_btn_save">
         <requestFocus />
     </EditText>
 

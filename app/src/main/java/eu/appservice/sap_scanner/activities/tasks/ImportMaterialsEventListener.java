@@ -17,8 +17,8 @@ import org.apache.poi.hssf.record.SSTRecord;
 import java.util.ArrayList;
 import java.util.List;
 
-import eu.appservice.sap_scanner.R;
 import eu.appservice.sap_scanner.Material;
+import eu.appservice.sap_scanner.R;
 import eu.appservice.sap_scanner.databases.MaterialsDbOpenHelper;
 import eu.appservice.sap_scanner.logfile.InterfaceObservable;
 import eu.appservice.sap_scanner.logfile.InterfaceObserver;

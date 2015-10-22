@@ -5,13 +5,13 @@
         android:id="@+id/menu_pz_show_preferences"
         android:title="@string/menu_settings"
         android:icon="@drawable/ic_settings"
-        sapScanner:showAsAction="never|withText"/>
+        sapScanner:showAsAction="withText" />
 
     <item
         android:id="@+id/menu_pz_add_new_material"
         android:title="@string/menu_pz_add_new_material"
         android:icon="@drawable/ic_add"
-        sapScanner:showAsAction="never|withText"/>
+        sapScanner:showAsAction="withText" />
 
 
 </menu>

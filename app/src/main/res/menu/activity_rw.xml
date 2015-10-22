@@ -5,17 +5,17 @@
         android:id="@+id/menu_pz_show_preferences"
         android:title="@string/menu_settings"
         android:icon="@drawable/ic_settings"
-        sapScanner:showAsAction="never|withText|collapseActionView"
-        android:showAsAction="ifRoom|withText"
+        sapScanner:showAsAction="withText"
         sapScanner:icon="@drawable/ic_settings"/>
-<!-- never|-->
+
+    <!--   android:showAsAction="ifRoom|withText"-->
     <item
         android:id="@+id/menu_rw_export_to_xls"
-        android:title="Eksportuj do pliku Excel"
+        android:title="@string/menu_rw_export"
         android:icon="@drawable/ic_excel2"
-        sapScanner:showAsAction="never|withText|collapseActionView"
-        android:showAsAction="ifRoom|withText"
+        sapScanner:showAsAction="withText"
+
         sapScanner:icon="@drawable/ic_excel2"/>
 
-
+    <!--    android:showAsAction="ifRoom|withText"-->
 </menu>

@@ -162,6 +162,8 @@
                 android:layout_marginTop="25dp"
                 android:width="100dp"
                 android:text="Zapisz"
+                android:focusableInTouchMode="true"
+
 
                 />
             <!--android:layout_alignParentBottom="true"
@@ -181,7 +183,11 @@
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:text="MPK" />
+                android:text="MPK"
+                android:nextFocusDown="@id/activity_rw_btn_save"
+                android:focusableInTouchMode="true"
+
+                />
 
             <Button
                 android:id="@+id/activity_rw_btn_list_materials"
@@ -212,7 +218,8 @@
                 android:ems="4"
                 android:focusable="true"
                 android:inputType="numberDecimal"
-                android:nextFocusDown="@+id/activity_rw_et_value">
+                android:nextFocusDown="@id/activity_rw_btn_mpk"
+                android:nextFocusForward="@id/activity_rw_btn_mpk">
 
 
             </EditText>

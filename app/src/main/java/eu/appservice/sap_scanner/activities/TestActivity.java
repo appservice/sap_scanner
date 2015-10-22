@@ -16,10 +16,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import eu.appservice.sap_scanner.R;
 import eu.appservice.sap_scanner.CollectedMaterial;
 import eu.appservice.sap_scanner.Material;
 import eu.appservice.sap_scanner.PlantStrucMpk;
+import eu.appservice.sap_scanner.R;
 import eu.appservice.sap_scanner.Utils;
 import eu.appservice.sap_scanner.activities.fileChooser.FileChooserActivity;
 import eu.appservice.sap_scanner.databases.CollectedMaterialDbOpenHelper;

@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import eu.appservice.sap_scanner.R;
 import eu.appservice.sap_scanner.PlantStrucMpk;
+import eu.appservice.sap_scanner.R;
 
 /**
  * Created by Lukasz on 2014-04-15.

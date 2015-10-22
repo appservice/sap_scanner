@@ -96,7 +96,8 @@
         android:visibility="invisible"
         android:layout_toRightOf="@+id/activity_search_et_store"
         android:layout_marginLeft="30dip"
-        android:layout_alignBaseline="@+id/activity_search_et_store" />
+        android:layout_alignBaseline="@+id/activity_search_et_store"
+        android:focusableInTouchMode="true" />
 
     <TextView
         android:id="@+id/activity_search_tv_unit"

@@ -38,8 +38,8 @@
     <string name="title_activity_new_material">MainActivity</string>
     <string name="btnTextAddActiv">Dodaj</string>
     <string name="textViewTitleAddActiv">Dodaj nowy Materiał do Bazy</string>
-    <string name="my_pref_flash">pref_is_auto_flash_off</string>
-    <string name="is_auto_off_default">false</string>
+    <string name="my_pref_flash" translatable="false">pref_is_auto_flash_off</string>
+    <string name="is_auto_off_default" translatable="false">false</string>
     <string name="barcode_scan_intent_address">com.google.zxing.client.android.SCAN</string>
     <string name="barcode_scanner_not_installed_message">Zainstaluj aplikację BarcodeScanner</string>
     <string name="call_search_activity">IS_FROM_OTHER_ACTIVITY</string>
@@ -57,14 +57,14 @@
     <string name="title_activity_rw">RW</string>
     <string name="sdcard_temp">/sdcard/temp.txt</string>
     <string name="sdcard_magazyn">/sdcard/magazyn.txt</string>
-    <string name="excel_with_materials">zrzut_stanu.xls</string>
+    <string name="excel_with_materials" translatable="false">zrzut_stanu.xls</string>
     <string name="msg_install_barcode_scanner">Zainstaluj aplikację BarcodeScaner</string>
     <string name="loading_text">Ładuję…</string>
     <string name="title_activity_info">O programie</string>
     <string name="action_settings">Ustawienia</string>
-    <string name="date_format_out">E dd.MM.yy \' godz: \'HH.mm.ss</string>
-    <string name="date_format_standard">yyyy-MM-dd HH:mm:ss</string>
-    <string name="main_folder">Sap_skaner</string>
+    <string name="date_format_out" translatable="false">E dd.MM.yy \' godz: \'HH.mm.ss</string>
+    <string name="date_format_standard" translatable="false">yyyy-MM-dd HH:mm:ss</string>
+    <string name="main_folder" translatable="false">Sap_skaner</string>
     <string name="signatures_folder">Podpisy</string>
     <string name="label_index">Index:</string>
     <string name="label_name">Nazwa:</string>
@@ -90,7 +90,7 @@
     <string name="warning_chose_budget_mpk">Wybierz MPK / zlecenie!</string>
     <string name="warning_fill_amount">Wprowadź pobieraną ilość!</string>
     <string name="warning_scan_material">Zeskanuj / wybierz pobierany materiał!</string>
-    <string name="imported_excel_file_name">zrzut_stanu.xls</string>
+    <string name="imported_excel_file_name" translatable="false">zrzut_stanu.xls</string>
     <string name="warning_founded">Odnaleziono %1$s :</string>
     <string name="message_collected">Wydano: </string>
     <string name="barcode_encode_intent_address">com.google.zxing.client.android.ENCODE</string>
@@ -106,5 +106,6 @@ Sprawdź kolumnę 4 wiersz: </string>
     <string name="activity_rw_name_tv_text">Nazwa:</string>
     <string name="activity_rw_amount_tv_text">Ilość:</string>
     <string name="activity_rw_index_tv_text">Index:</string>
+    <string name="menu_rw_export">Eksportuj do pliku Excel</string>
 
 </resources>

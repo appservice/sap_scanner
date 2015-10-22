@@ -1,6 +1,5 @@
 package eu.appservice.sap_scanner;
 
-import android.annotation.TargetApi;
 import android.content.ClipData;
 import android.content.Context;
 import android.os.Build;

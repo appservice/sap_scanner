@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import eu.appservice.sap_scanner.R;
 import eu.appservice.sap_scanner.Material;
+import eu.appservice.sap_scanner.R;
 import eu.appservice.sap_scanner.Utils;
 
 /**

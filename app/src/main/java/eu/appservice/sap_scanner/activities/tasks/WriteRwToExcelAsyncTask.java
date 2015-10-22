@@ -16,11 +16,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import eu.appservice.sap_scanner.R;
 import eu.appservice.sap_scanner.CollectedMaterial;
 import eu.appservice.sap_scanner.Material;
+import eu.appservice.sap_scanner.R;
 import eu.appservice.sap_scanner.Utils;
-
 import eu.appservice.sap_scanner.databases.CollectedMaterialDbOpenHelper;
 import eu.appservice.sap_scanner.databases.MaterialsDbOpenHelper;
 import eu.appservice.sap_scanner.logfile.InterfaceObservable;

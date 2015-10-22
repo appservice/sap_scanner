@@ -16,7 +16,6 @@ import java.io.IOException;
 
 import eu.appservice.sap_scanner.Material;
 import eu.appservice.sap_scanner.R;
-
 import eu.appservice.sap_scanner.databases.MaterialsDbOpenHelper;
 import jxl.Cell;
 import jxl.CellType;
