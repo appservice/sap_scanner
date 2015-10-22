@@ -43,8 +43,8 @@
         android:width="100dp"
         android:layout_marginTop="26dp"
         android:layout_below="@+id/activity_pz_et_value"
-        android:layout_centerHorizontal="true"
-        android:focusableInTouchMode="true" />
+        android:layout_centerHorizontal="true" />
+    <!--android:focusableInTouchMode="true" -->
 
     <TextView
         android:id="@+id/textView6"
@@ -69,7 +69,8 @@
         android:editable="false"
         android:textColor="@android:color/white"
         android:textSize="22sp"
-        android:inputType="text" />
+        android:inputType="none"
+        android:textIsSelectable="true" />
 
     <TextView
         android:id="@+id/activity_pz_tv_scanned_name"

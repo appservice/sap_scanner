@@ -69,7 +69,7 @@
                 android:layout_alignLeft="@+id/activity_rw_tv_scanned_name"
                 android:layout_below="@+id/activity_rw_ibtn_search"
                 android:layout_marginTop="15dp"
-                android:editable="false"
+
                 android:cursorVisible="false"
                 android:gravity="left"
                 android:maxLength="18"
@@ -77,7 +77,10 @@
                 android:textColor="#FAFAFA"
                 android:textSize="22sp"
                 android:background="#0000"
-                android:inputType="text" />
+                android:inputType="none"
+                android:textIsSelectable="true"
+
+                />
             <!--
             android:enabled="false"
               android:editable="false"
@@ -130,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/textView8"
                 android:layout_alignParentTop="true"
-                android:text="Szukaj w bazie"
+                android:text="@string/rw_search_in_database"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
@@ -161,8 +164,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="25dp"
                 android:width="100dp"
-                android:text="Zapisz"
-                android:focusableInTouchMode="true"
+                android:text="@string/save"
+
 
 
                 />
@@ -183,11 +186,12 @@
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:text="MPK"
+                android:text="@string/mpk"
                 android:nextFocusDown="@id/activity_rw_btn_save"
-                android:focusableInTouchMode="true"
+
 
                 />
+            <!--  android:focusableInTouchMode="true"-->
 
             <Button
                 android:id="@+id/activity_rw_btn_list_materials"
@@ -195,7 +199,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignTop="@+id/activity_rw_btn_save"
-                android:text="Lista" />
+                android:text="@string/list" />
 
             <ImageButton
                 android:id="@+id/activity_rw_btn_signature"
@@ -205,7 +209,7 @@
                 android:layout_alignTop="@+id/activity_rw_btn_save"
                 android:layout_toRightOf="@+id/activity_rw_tv_budget"
                 android:src="@drawable/ic_document_write"
-                android:text="Podpis" />
+                android:text="@string/signature" />
             <!--android:layout_alignParentBottom="true"-->
             <EditText
                 android:id="@+id/activity_rw_et_value"

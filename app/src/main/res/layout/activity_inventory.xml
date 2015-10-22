@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
 
 
-    tools:context=".activities.InventoryActivity">
+    tools:context=".activities.InventoryActivity"
+    android:background="@drawable/green_gradient">
 
 
     <ImageButton
@@ -52,11 +53,9 @@
         android:id="@+id/inventory_activity_et_index"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/inventory_activity_ibtn_search"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/btn_black"
+        android:layout_marginTop="23dp"
+        android:background="#00000000"
         android:cursorVisible="false"
-        android:editable="false"
         android:maxLength="18"
         android:text=""
         android:textSize="22sp"
@@ -64,9 +63,11 @@
         android:gravity="left"
         android:autoText="false"
         android:minWidth="220dip"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp" />
+        android:textIsSelectable="true"
+        android:inputType="none"
+        android:layout_below="@+id/inventory_activity_ibtn_search"
+        android:layout_toRightOf="@+id/inventory_activity_tv_name"
+        android:layout_toEndOf="@+id/inventory_activity_tv_name" />
 
     <TextView
         android:id="@+id/inventory_activity_tv_name"

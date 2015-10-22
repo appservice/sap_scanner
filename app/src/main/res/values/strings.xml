@@ -107,5 +107,10 @@ Sprawdź kolumnę 4 wiersz: </string>
     <string name="activity_rw_amount_tv_text">Ilość:</string>
     <string name="activity_rw_index_tv_text">Index:</string>
     <string name="menu_rw_export">Eksportuj do pliku Excel</string>
+    <string name="rw_search_in_database">Szukaj w bazie</string>
+    <string name="save">Zapisz</string>
+    <string name="mpk">MPK</string>
+    <string name="list">Lista</string>
+    <string name="signature">Podpis</string>
 
 </resources>
