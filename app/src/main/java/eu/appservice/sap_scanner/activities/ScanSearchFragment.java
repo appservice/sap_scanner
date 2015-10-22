@@ -170,7 +170,7 @@ public class ScanSearchFragment extends Fragment implements View.OnClickListener
     }
 
    public interface OnGetMaterialFromDb{
-       public void onGetMaterialFromDb(Material materialFromDb);
+       void onGetMaterialFromDb(Material materialFromDb);
    }
 
 

@@ -8,5 +8,5 @@ import eu.appservice.sap_scanner.CollectedMaterial;
  * ﹕ SAP Skanner
  */
 public interface MaterialSaver {
-    public abstract int save(CollectedMaterial collectedMaterial);
+    int save(CollectedMaterial collectedMaterial);
 }

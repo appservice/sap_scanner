@@ -15,6 +15,7 @@
         android:layout_marginLeft="40dp"
         android:layout_alignParentLeft="true"
         android:src="@drawable/ic_search"
+        android:contentDescription="@null"
        />
     <!--android:layout_alignTop="@+id/imgBtnScanInvActiv"-->
 
@@ -84,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/textView6"
         android:layout_marginTop="15dp"
-        android:text="Ilość:"
+        android:text="@string/string_amount"
         android:layout_below="@+id/inventory_activity_tv_name" />
 
     <TextView
@@ -94,7 +95,7 @@
         android:layout_alignBaseline="@+id/inventory_activity_et_index"
         android:layout_alignBottom="@+id/inventory_activity_et_index"
         android:layout_alignRight="@+id/textView6"
-        android:text="Index:" />
+        android:text="@string/index_string" />
 
     <TextView
         android:id="@+id/inventory_activity_tv_amount"
@@ -202,7 +203,7 @@
         android:layout_alignBaseline="@+id/inventory_activity_btn_place"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
-        android:text="miejsce inwentaryzacji"
+        android:text="@string/inventarisation_place_string"
         android:gravity="center" />
 
 

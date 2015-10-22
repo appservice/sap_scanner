@@ -14,5 +14,6 @@
     <string name="label_unit">unit</string>
     <string name="loading_text">Loading...</string>
     <string name="barcode_encode_intent_address">com.google.zxing.client.android.ENCODE</string>
+    <string name="activity_rw_chck_is_zero_text">na zero</string>
 
 </resources>

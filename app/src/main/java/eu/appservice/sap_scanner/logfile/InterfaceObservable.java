@@ -5,11 +5,11 @@ package eu.appservice.sap_scanner.logfile;
  * ﹕ SAP Skanner
  */
 public interface InterfaceObservable {
-    public void addObserver(InterfaceObserver iObserver);
+    void addObserver(InterfaceObserver iObserver);
 
-    public void deleteObserver(InterfaceObserver iObserver);
+    void deleteObserver(InterfaceObserver iObserver);
 
-    public void notifyObservers();
+    void notifyObservers();
 
-    public void notifyObservers(Object arg);
+    void notifyObservers(Object arg);
 }

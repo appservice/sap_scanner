@@ -57,6 +57,6 @@ public class ExportDataToExcelDialog extends DialogFragment {
     }
 
     public interface Communicator{
-        public void okClicked();
+        void okClicked();
     }
 }

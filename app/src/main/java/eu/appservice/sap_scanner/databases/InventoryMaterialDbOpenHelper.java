@@ -65,7 +65,7 @@ public class InventoryMaterialDbOpenHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean addInvetoredMaterial(InventoredMaterial im){
+    public boolean addInvetoredMaterial(InventoredMaterial im) {
         SQLiteDatabase db = this.getWritableDatabase();
         //db.
         ContentValues cv = new ContentValues();
@@ -75,12 +75,12 @@ public class InventoryMaterialDbOpenHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_AMOUNT, im.getMaterial().getAmount());
         cv.put(COLUMN_STORE, im.getMaterial().getStore());
         cv.put(COLUMN_DESCRIPTION, im.getMaterial().getDescription());
-        Log.w("inventored date",im.getInventoredDate());
-        cv.put(COLUMN_DATE,im.getInventoredDate());
+        Log.w("inventored date", im.getInventoredDate());
+        cv.put(COLUMN_DATE, im.getInventoredDate());
         long result;
-        result=db.insert(TABLE_NAME,null,cv);
+        result = db.insert(TABLE_NAME, null, cv);
         db.close();
-        return result!=-1;
+        return result != -1;
 
 
     }
@@ -93,43 +93,43 @@ public class InventoryMaterialDbOpenHelper extends SQLiteOpenHelper {
      * @return Return material from database founded by id
 
     public CollectedMaterial getPickedMaterial(int id) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String columns[] = ALL_COLUMNS_TABLE;
-        String where = COLUMN_ID + "=" + id;
-        Cursor cursor = db.query(TABLE_NAME, columns, where, null, null, null, null);
+    SQLiteDatabase db = this.getReadableDatabase();
+    String columns[] = ALL_COLUMNS_TABLE;
+    String where = COLUMN_ID + "=" + id;
+    Cursor cursor = db.query(TABLE_NAME, columns, where, null, null, null, null);
 
-        if (cursor != null)
+    if (cursor != null)
 
-            cursor.moveToFirst();
-        boolean isZero;
-        isZero = cursor.getInt(10) == 1;
-        Material material = new Material(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getDouble(4), cursor.getString(5), cursor.getString(6));
-        CollectedMaterial collectedMaterial = new CollectedMaterial(material, cursor.getDouble(7), cursor.getString(9), cursor.getString(8), isZero, cursor.getString(11), cursor.getString(12));
+    cursor.moveToFirst();
+    boolean isZero;
+    isZero = cursor.getInt(10) == 1;
+    Material material = new Material(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getDouble(4), cursor.getString(5), cursor.getString(6));
+    CollectedMaterial collectedMaterial = new CollectedMaterial(material, cursor.getDouble(7), cursor.getString(9), cursor.getString(8), isZero, cursor.getString(11), cursor.getString(12));
 
-        cursor.close();
-        db.close();
-        return collectedMaterial;
+    cursor.close();
+    db.close();
+    return collectedMaterial;
 
     }
      */
     /**
      * update picked material
 
-    public int updatePickedMaterial(CollectedMaterial collectedMaterial){
-        SQLiteDatabase db=this.getWritableDatabase();
-        ContentValues cv=new ContentValues();
-        cv.put(COLUMN_INDEX, collectedMaterial.getIndex());
-        cv.put(COLUMN_NAME, collectedMaterial.getName());
-        cv.put(COLUMN_UNIT, collectedMaterial.getUnit());
-        cv.put(COLUMN_AMOUNT, collectedMaterial.getAmount());
-        cv.put(COLUMN_STORE, collectedMaterial.getStore());
-        cv.put(COLUMN_DESCRIPTION, collectedMaterial.getDescription());
-         String where= collectedMaterial.getId()+"="+COLUMN_ID;
-        int removedRow=db.update(TABLE_NAME,cv,where,null);
-        db.close();
-        return removedRow;
+     public int updatePickedMaterial(CollectedMaterial collectedMaterial){
+     SQLiteDatabase db=this.getWritableDatabase();
+     ContentValues cv=new ContentValues();
+     cv.put(COLUMN_INDEX, collectedMaterial.getIndex());
+     cv.put(COLUMN_NAME, collectedMaterial.getName());
+     cv.put(COLUMN_UNIT, collectedMaterial.getUnit());
+     cv.put(COLUMN_AMOUNT, collectedMaterial.getAmount());
+     cv.put(COLUMN_STORE, collectedMaterial.getStore());
+     cv.put(COLUMN_DESCRIPTION, collectedMaterial.getDescription());
+     String where= collectedMaterial.getId()+"="+COLUMN_ID;
+     int removedRow=db.update(TABLE_NAME,cv,where,null);
+     db.close();
+     return removedRow;
 
-    } */
+     } */
     /**
      * @return list of all picked materials
      */
@@ -183,8 +183,8 @@ public class InventoryMaterialDbOpenHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * @param index  if you don't want checking by this parameter set empty String ""
-     * @param name   if you don't want checking by this parameter set empty String ""
+     * @param index if you don't want checking by this parameter set empty String ""
+     * @param name  if you don't want checking by this parameter set empty String ""
      * @return Return activity_rw new ArrayList of founded Materials by above mentioned criteria
      */
     public List<CollectedMaterial> getPickedMaterialsByIndexAndName(String index, String name) {
@@ -219,7 +219,7 @@ public class InventoryMaterialDbOpenHelper extends SQLiteOpenHelper {
                 boolean isZero;
                 do {
                     isZero = cursor.getInt(10) == 1;
-                    Material material = new Material(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3),cursor.getDouble(4), cursor.getString(5), cursor.getString(6));
+                    Material material = new Material(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getDouble(4), cursor.getString(5), cursor.getString(6));
                     CollectedMaterial collectedMaterial = new CollectedMaterial(material, cursor.getDouble(7), cursor.getString(8), cursor.getString(9), isZero, cursor.getString(11), cursor.getString(12));
                     allMaterialsByIndexAndName.add(collectedMaterial);
                 }
@@ -239,6 +239,12 @@ public class InventoryMaterialDbOpenHelper extends SQLiteOpenHelper {
         String where = COLUMN_ID + "=" + id;
         int removedRow = db.delete(TABLE_NAME, where, null);
         db.close();
-       // return removedRow;
+        // return removedRow;
     }
+
+    public void deleteAllRows() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME,null,null);
+    }
+
 }

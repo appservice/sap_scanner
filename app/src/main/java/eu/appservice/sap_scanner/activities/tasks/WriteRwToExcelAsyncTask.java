@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.io.File;
@@ -53,7 +54,7 @@ public class WriteRwToExcelAsyncTask extends AsyncTask<Void, Integer, Void> impl
     protected ProgressDialog progressDialog;
     // protected String fileName = null;
     private File excelFile;
-   // private List<File> filesForDelete;
+    // private List<File> filesForDelete;
     private List<InterfaceObserver> observersList;
 
     public WriteRwToExcelAsyncTask(Activity context) {
@@ -83,8 +84,8 @@ public class WriteRwToExcelAsyncTask extends AsyncTask<Void, Integer, Void> impl
 
             try {
 
-               // String fileName = "rw_" + nowDate() + ".xls";
-                this.excelFile = new File(Environment.getExternalStorageDirectory()+File.separator+myContext.getString(R.string.main_folder)+File.separator+
+                // String fileName = "rw_" + nowDate() + ".xls";
+                this.excelFile = new File(Environment.getExternalStorageDirectory() + File.separator + myContext.getString(R.string.main_folder) + File.separator +
                         getFileName());
 
 
@@ -137,7 +138,7 @@ public class WriteRwToExcelAsyncTask extends AsyncTask<Void, Integer, Void> impl
                 WritableCellFormat wf2 = new WritableCellFormat();
                 wf2.setBorder(Border.ALL, BorderLineStyle.THIN);
 
-               //-----------date format-------------------------
+                //-----------date format-------------------------
                 jxl.write.DateFormat dateForm = new jxl.write.DateFormat("dd-MMMM-yyyy hh:mm:ss");
                 WritableCellFormat wfDate = new WritableCellFormat(dateForm);
                 wfDate.setBorder(Border.ALL, BorderLineStyle.THIN);
@@ -163,14 +164,16 @@ public class WriteRwToExcelAsyncTask extends AsyncTask<Void, Integer, Void> impl
                     sheet.addCell(new Label(11, rowNumber, cm.getSignAddress(), wf2));
 
                     //--------------write signature picture in cell-----------------------
+                    // Log.i("i want ","tst1");
                     if (cm.getSignAddress().length() > 0) {
                         File imageFile = readImageFile(cm.getSignAddress());
-
-                        if (imageFile!=null) {
+                        // Log.i("i want ",imageFile.getAbsolutePath());
+                        if (imageFile != null) {
                             WritableImage wi = new WritableImage(12, rowNumber, //column, row
                                     1, 1, //width, height (according cels)
                                     imageFile);
-                            wi.setImageAnchor(WritableImage.MOVE_WITH_CELLS);
+                            Log.i("wi", imageFile.getAbsolutePath());
+                            wi.setImageAnchor(WritableImage.MOVE_AND_SIZE_WITH_CELLS);
                             sheet.addImage(wi);
                         }
 
@@ -196,8 +199,8 @@ public class WriteRwToExcelAsyncTask extends AsyncTask<Void, Integer, Void> impl
 
 
                 //---------write workbook------------------
-                    workbook.write();
-                    workbook.close();
+                workbook.write();
+                workbook.close();
                   /*  for (File f : filesForDelete) {
                         if (!f.delete())                //delete image file with sing which will be write in excel
                             Log.i("file", f.getName() + ": can't delete this file");
@@ -211,7 +214,6 @@ public class WriteRwToExcelAsyncTask extends AsyncTask<Void, Integer, Void> impl
     }
 
     /**
-     *
      * @param collectedMaterialList List of collected materials
      * @return map index of material: sum of amount in all stores this material
      */
@@ -254,13 +256,9 @@ public class WriteRwToExcelAsyncTask extends AsyncTask<Void, Integer, Void> impl
     }
 
 
-
-
-
-
     private String getFileName() {
 
-        return "rw_"+Utils.reformatDate(Utils.nowDate(),"dd.MM.yy'_godz_'HH.mm.ss")+".xls";
+        return "rw_" + Utils.reformatDate(Utils.nowDate(), "dd.MM.yy'_godz_'HH.mm.ss") + ".xls";
 
     }
 
@@ -290,29 +288,31 @@ public class WriteRwToExcelAsyncTask extends AsyncTask<Void, Integer, Void> impl
     }
 
 //--------------------------------------------------------------------------------------------------
+
     /**
-     *
      * @param fileName name of file with signature (from database)
      * @return image file with signature
      */
     private File readImageFile(String fileName) {
 
-     if (fileName.length() > 0 && fileName != null) {
+        if (fileName.length() > 0 && fileName != null) {
             File imageFile = new File(Environment
                     .getExternalStorageDirectory()
-                    +File.separator
-                    +myContext.getString(R.string.main_folder)
-                    +File.separator
-                    +myContext.getString(R.string.signatures_folder)
-                     + fileName);
+                    + File.separator
+                    + myContext.getString(R.string.main_folder)
+                    + File.separator
+                    + myContext.getString(R.string.signatures_folder) + File.separator
+                    + fileName);
+
 
             if (imageFile.exists()) {
+                //  Log.i("imgFile",imageFile.getAbsolutePath());
                 return imageFile;
             }
 
 
         }
-            return null;
+        return null;
 
     }
 }

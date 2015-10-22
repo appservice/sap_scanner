@@ -3,9 +3,11 @@ package eu.appservice.sap_scanner.activities;
 
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -30,6 +32,8 @@ import eu.appservice.sap_scanner.Material;
 import eu.appservice.sap_scanner.R;
 import eu.appservice.sap_scanner.ScannedMaterial;
 import eu.appservice.sap_scanner.Utils;
+import eu.appservice.sap_scanner.activities.dialogs.NoSdCardDetectedDialog;
+import eu.appservice.sap_scanner.activities.tasks.WriteInventoryToExcelAsyncTask;
 import eu.appservice.sap_scanner.databases.InventoryMaterialDbOpenHelper;
 import eu.appservice.sap_scanner.databases.MaterialsDbOpenHelper;
 import eu.appservice.sap_scanner.model.InventoredMaterial;
@@ -59,6 +63,7 @@ public class InventoryActivity extends ActionBarActivity {
     private Material materialFromDb;
     private Material material;
 
+    private final Context context = this;
 
 
     @Override
@@ -89,7 +94,7 @@ public class InventoryActivity extends ActionBarActivity {
 
         textViewIndexInvActiv = (EditText) findViewById(R.id.inventory_activity_et_index);
         editTextAddValueInvActiv = (EditText) findViewById(R.id.inventory_activity_et_value);
-        btnShowListInvAcitv=(Button)findViewById(R.id.btnShowListInvAcitv);
+        btnShowListInvAcitv = (Button) findViewById(R.id.btnShowListInvAcitv);
 
 
         sharedPreferences = getSharedPreferences(MY_PREFERENCES, MODE_PRIVATE);
@@ -149,14 +154,16 @@ public class InventoryActivity extends ActionBarActivity {
     }
 
     private void showList() {
-        Intent intent=new Intent(getApplicationContext(),InventoryListActivity.class);
+        Intent intent = new Intent(getApplicationContext(), InventoryListActivity.class);
         startActivity(intent);
     }
 
-    public void  showTestActivity(View v){
-        Intent intent=new Intent(getApplicationContext(),TestActivity.class);
+/*
+    public void showTestActivity(View v) {
+        Intent intent = new Intent(getApplicationContext(), TestActivity.class);
         startActivity(intent);
     }
+*/
 
     private void showSearchActivity() {
         Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
@@ -275,7 +282,7 @@ public class InventoryActivity extends ActionBarActivity {
 
             TreeMap<String, Double> mapStockAmount = (TreeMap<String, Double>) db.getMapStockAmount(this.materialFromDb.getIndex());
             for (Map.Entry<String, Double> pairs : mapStockAmount.entrySet()) {
-                sb.append(pairs.getValue());
+                sb.append(Utils.parse(pairs.getValue()));
                 sb.append(" ");
                 sb.append(unit);
                 sb.append("   skład: ");
@@ -285,7 +292,7 @@ public class InventoryActivity extends ActionBarActivity {
             }
 
             textViewAmountInvActiv.setText(sb.toString());
-            editTextAddValueInvActiv.setText(String.valueOf(this.materialFromDb.getAmount()));
+            editTextAddValueInvActiv.setText(String.valueOf(Utils.parse(this.materialFromDb.getAmount())));
 
             db.close();
 
@@ -301,8 +308,8 @@ public class InventoryActivity extends ActionBarActivity {
 
 
     private void showScanner() {
-        Intent barcodeScannerIntent=new Intent("com.google.zxing.client.android.SCAN");
-        IntentAvailableChecker iac=new IntentAvailableChecker(getApplicationContext());
+        Intent barcodeScannerIntent = new Intent("com.google.zxing.client.android.SCAN");
+        IntentAvailableChecker iac = new IntentAvailableChecker(getApplicationContext());
 
         if (iac.isIntentAvailable(barcodeScannerIntent)) {
             barcodeScannerIntent.putExtra("SCAN_MODE", "QR_CODE_MODE");
@@ -325,16 +332,16 @@ public class InventoryActivity extends ActionBarActivity {
 
                 //int removedRow = db.updateMaterial(this.materialFromDb); //uaktualnienie ilości w bazie danych
 
-                    materialFromDb.setDescription(tvInventoryPlace.getText().toString());
+                materialFromDb.setDescription(tvInventoryPlace.getText().toString());
 
 
-                    // writeToFile(materialFromDb, removedValue, mpk, budget, toZero);//zapis do pliku txt pobranych materiałów
-                    addToInventoryMaterialDb(materialFromDb, removedValue);// zapis do bazy danych pobranych materiałów
+                // writeToFile(materialFromDb, removedValue, mpk, budget, toZero);//zapis do pliku txt pobranych materiałów
+                addToInventoryMaterialDb(materialFromDb, removedValue);// zapis do bazy danych pobranych materiałów
                 Toast.makeText(getApplicationContext(), materialFromDb.toString() + "Dodano " + removedValue + " " + this.materialFromDb.getUnit(), Toast.LENGTH_SHORT).show();
 
 
                 materialFromDb = null;
-                    showMaterial();
+                showMaterial();
 
 
             } else {
@@ -351,13 +358,13 @@ public class InventoryActivity extends ActionBarActivity {
         InventoredMaterial im = new InventoredMaterial(materialFromDatabase, Utils.nowDate());
 
 
-        double materialAmount=materialFromDatabase.getAmount();
+        double materialAmount = materialFromDatabase.getAmount();
 
-        materialFromDatabase.setAmount(materialAmount-inventoredAmount);
+        materialFromDatabase.setAmount(materialAmount - inventoredAmount);
 
-        boolean result=inventoryMaterialDbOpenHelper.addInvetoredMaterial(im);
+        boolean result = inventoryMaterialDbOpenHelper.addInvetoredMaterial(im);
 
-     //   boolean result = inventoryMaterialDbOpenHelper.addPickedMaterial(pm);
+        //   boolean result = inventoryMaterialDbOpenHelper.addPickedMaterial(pm);
 
     }
 
@@ -365,7 +372,7 @@ public class InventoryActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-       // menu.getItem(R.id.men_inventory_add).setIcon(R.drawable.ic_add);
+        // menu.getItem(R.id.men_inventory_add).setIcon(R.drawable.ic_add);
         getMenuInflater().inflate(R.menu.activity_inventory, menu);
 
         return super.onCreateOptionsMenu(menu);
@@ -377,13 +384,55 @@ public class InventoryActivity extends ActionBarActivity {
             case android.R.id.home:
                 finish();
                 return true;
-            case R.id.men_inventory_add:
-                item.setIcon(R.drawable.ic_add);
+            case R.id.menu_inventory_export:
+                exportToFile();
+                return true;
+            case R.id.menu_inventory_reset:
+                resetInventory();
                 return true;
         }
         return true;
     }
 
+    private void resetInventory() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Czy chcesz zresetować dane inwentaryacji?").setTitle("Uwaga!").setNegativeButton("Anuluj", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        })
+                .setPositiveButton("Tak", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        InventoryMaterialDbOpenHelper dbOpenHelper = new InventoryMaterialDbOpenHelper(InventoryActivity.this);
+                        dbOpenHelper.deleteAllRows();
+                        Toast.makeText(context, "Dane usunięto!", Toast.LENGTH_LONG).show();
+                    }
+                }).create().show();
 
 
+    }
+
+    private void exportToFile() {
+        if (Utils.isExternalStorageWritable()) {
+
+            WriteInventoryToExcelAsyncTask task = new WriteInventoryToExcelAsyncTask(InventoryActivity.this);
+            task.execute();
+        } else {
+            cantWriteToExternalStorageMessage();
+
+        }
+    }
+
+
+    /**
+     * This function show alert when the SD card is not mounted
+     */
+    private void cantWriteToExternalStorageMessage() {
+
+        NoSdCardDetectedDialog noSdCardDetectedDialog = new NoSdCardDetectedDialog();
+        noSdCardDetectedDialog.show(getSupportFragmentManager(), "NO_SD_CARD");
+    }
 }

@@ -98,5 +98,13 @@
     <string name="warning_incorrect_data_in_imported_excel_file">Kolumna 4 musi zawierać ilości!
 Sprawdź kolumnę 4 wiersz: </string>
     <string name="title_activity_inventory_list">Lista zinteryzowanych</string>
+    <string name="index_string">Index:</string>
+    <string name="string_amount">Ilość:</string>
+    <string name="inventarisation_place_string">miejsce inwentaryzacji</string>
+    <string name="activity_rw_chck_is_zero_text">na zero</string>
+    <string name="scan_text">Skanuj</string>
+    <string name="activity_rw_name_tv_text">Nazwa:</string>
+    <string name="activity_rw_amount_tv_text">Ilość:</string>
+    <string name="activity_rw_index_tv_text">Index:</string>
 
 </resources>

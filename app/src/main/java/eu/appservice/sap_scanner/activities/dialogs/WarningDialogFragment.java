@@ -64,6 +64,6 @@ public class WarningDialogFragment extends DialogFragment{
     }
 
     public interface Communicator{
-        public void okClicked();
+        void okClicked();
     }
 }

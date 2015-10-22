@@ -16,7 +16,7 @@
             android:label="@string/title_activity_main"
             android:permission="android.permission.VIBRATE"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat" >
+         >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -156,8 +156,10 @@
             android:name=".activities.fileChooser.FileChooserActivity"
             android:label="@string/title_activity_file_chooser" >
         </activity>
+        <!--inventory  list....................................- -->
         <activity
             android:name=".activities.InventoryListActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_inventory_list"
             android:parentActivityName=".activities.InventoryActivity" >
             <meta-data

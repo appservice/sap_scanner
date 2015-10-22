@@ -95,6 +95,6 @@ public class SearchMaterialsAsyncTask extends AsyncTask<Object, Void, List<Mater
 
 //-----------interface to connecting with Activity-------------------------------------------------
     public interface GetAsyncTaskListener {
-        public void onAsyncTaskFinished(List<Material> materials);
+        void onAsyncTaskFinished(List<Material> materials);
     }
 }

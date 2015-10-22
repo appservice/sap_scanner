@@ -60,6 +60,6 @@ public class RemoveRwListFromDbDialog extends DialogFragment {
     }
 
     public interface Communicator{
-        public void removeRwListFromDb();
+        void removeRwListFromDb();
     }
 }

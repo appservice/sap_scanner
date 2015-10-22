@@ -1,9 +1,11 @@
 package eu.appservice.sap_scanner;
 
 import android.annotation.TargetApi;
+import android.content.ClipData;
 import android.content.Context;
 import android.os.Build;
 import android.os.Environment;
+import android.text.ClipboardManager;
 
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -133,19 +135,22 @@ public class Utils {
     /**
      * This function is copy the data to clipboard
      */
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+//  @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public static void copyTextToClipboard(Context context,String label, String text){
-        int currentApiVersion = Build.VERSION.SDK_INT;
 
 
-        if (currentApiVersion < Build.VERSION_CODES.HONEYCOMB) {
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
             @SuppressWarnings("deprecation")
-            android.text.ClipboardManager clipboard = (android.text.ClipboardManager)context.getSystemService(context.CLIPBOARD_SERVICE);
+            ClipboardManager clipboard = (ClipboardManager)context.getSystemService(Context.CLIPBOARD_SERVICE);
             clipboard.setText(text);
         } else {
-            android.content.ClipboardManager clipboard = (android.content.ClipboardManager)context.getSystemService(context.CLIPBOARD_SERVICE);
-            android.content.ClipData clip = android.content.ClipData.newPlainText(label, text);
-            clipboard.setPrimaryClip(clip);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            android.content.ClipboardManager clipboard = (android.content.ClipboardManager)context.getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText(label, text);
+
+                clipboard.setPrimaryClip(clip);
+            }
         }
 
 

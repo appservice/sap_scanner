@@ -1,5 +1,16 @@
 <resources>
 
-    <style name="AppTheme" parent="AppTheme" />
+
+    <!--<style name="AppTheme" parent="Theme.AppCompat" >
+&lt;!&ndash;
+        <item name="android:background">#33B5E5</item>
+&ndash;&gt;
+<item name="android:background" >@color/black_background_color</item>
+
+     &lt;!&ndash;   <item name="android:windowNoTitle">false</item>&ndash;&gt;
+  &lt;!&ndash;      <item name="action"></item>&ndash;&gt;
+
+        </style>-->
+
 
 </resources>

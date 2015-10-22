@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@drawable/red_gradient">
 
     <ImageButton
         android:id="@+id/activity_pz_ibtn_search"
@@ -63,10 +64,11 @@
         android:layout_marginTop="28dp"
         android:text=""
         android:textStyle="bold"
-        android:background="@android:color/black"
+        android:background="#00ffffff"
         android:editable="false"
         android:textColor="@android:color/white"
-        android:textSize="22sp" />
+        android:textSize="22sp"
+        android:inputType="text" />
 
     <TextView
         android:id="@+id/activity_pz_tv_scanned_name"

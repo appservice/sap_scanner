@@ -101,52 +101,52 @@ public class WriteRwToExcelPoiAsyncTask extends AsyncTask<Void, Integer, Void> {
                 // header.setRowStyle(headerStyle);
 
 
-                Cell c0 =header.createCell(0);
+                Cell c0 = header.createCell(0);
                 c0.setCellValue("Index");
                 c0.setCellStyle(headerStyle);
 
-                Cell c1= header.createCell(1);
+                Cell c1 = header.createCell(1);
                 c1.setCellValue("Ilość");
                 c1.setCellStyle(headerStyle);
 
-                Cell c2=header.createCell(2);
+                Cell c2 = header.createCell(2);
                 c2.setCellValue("Jednostka");
 
                 c2.setCellStyle(headerStyle);
 
-                Cell c3=header.createCell(3);
+                Cell c3 = header.createCell(3);
                 c3.setCellValue("Skład");
                 c3.setCellStyle(headerStyle);
 
-                Cell c4=header.createCell(4);
+                Cell c4 = header.createCell(4);
                 c4.setCellValue("Mpk");
                 c4.setCellStyle(headerStyle);
 
-                Cell c5=header.createCell(5);
+                Cell c5 = header.createCell(5);
                 c5.setCellValue("Budżet");
                 c5.setCellStyle(headerStyle);
 
-                Cell c6=header.createCell(6);
+                Cell c6 = header.createCell(6);
                 c6.setCellValue("Czy na zero:");
                 c6.setCellStyle(headerStyle);
 
-                Cell c7=header.createCell(7);
+                Cell c7 = header.createCell(7);
                 c7.setCellValue("Nazwa:");
                 c7.setCellStyle(headerStyle);
 
-                Cell c8=header.createCell(8);
+                Cell c8 = header.createCell(8);
                 c8.setCellValue("Data:");
                 c8.setCellStyle(headerStyle);
 
-                Cell c9=header.createCell(9);
+                Cell c9 = header.createCell(9);
                 c9.setCellValue("Pozostało:");
                 c9.setCellStyle(headerStyle);
 
-                Cell c10=header.createCell(10);
+                Cell c10 = header.createCell(10);
                 c10.setCellValue("Adres podpisu");
                 c10.setCellStyle(headerStyle);
 
-                Cell c11=header.createCell(11);
+                Cell c11 = header.createCell(11);
                 c11.setCellValue("w dniu rw pozostalo:");
                 c11.setCellStyle(headerStyle);
 
@@ -264,8 +264,8 @@ public class WriteRwToExcelPoiAsyncTask extends AsyncTask<Void, Integer, Void> {
 /*                HSSFRow row = workbook.getSheetAt(0).getRow(0);
                 for(int colNum = 0; colNum<row.getLastCellNum();colNum++)
                     workbook.getSheetAt(0).autoSizeColumn(colNum);*/
-for(int column=0;column<12;column++)
-            sheet.autoSizeColumn(1);
+                for (int column = 0; column < 12; column++)
+                    sheet.autoSizeColumn(1);
 
                 FileOutputStream fos = new FileOutputStream(new File(Environment
                         .getExternalStorageDirectory().getPath()

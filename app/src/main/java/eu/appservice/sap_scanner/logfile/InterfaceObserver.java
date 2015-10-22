@@ -6,7 +6,7 @@ package eu.appservice.sap_scanner.logfile;
  */
 public interface InterfaceObserver {
 
-    public void update();
+    void update();
 
-    public void update(InterfaceObservable o, Object arg);
+    void update(InterfaceObservable o, Object arg);
 }
