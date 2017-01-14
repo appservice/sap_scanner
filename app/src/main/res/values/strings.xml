@@ -112,5 +112,6 @@ Sprawdź kolumnę 4 wiersz: </string>
     <string name="mpk">MPK</string>
     <string name="list">Lista</string>
     <string name="signature">Podpis</string>
+    <string name="lampa">lampa</string>
 
 </resources>

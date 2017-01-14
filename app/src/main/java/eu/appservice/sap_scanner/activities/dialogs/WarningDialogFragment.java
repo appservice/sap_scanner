@@ -28,7 +28,14 @@ public class WarningDialogFragment extends DialogFragment{
         }
     }
 
-    public WarningDialogFragment(String message){
+
+    public static WarningDialogFragment getInstance(String message){
+        WarningDialogFragment w=new WarningDialogFragment();
+        w.setMessage(message);
+        return w;
+    }
+
+    private void setMessage(String message){
         this.message=message;
 
     }

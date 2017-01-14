@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -27,7 +27,8 @@
                 android:layout_height="fill_parent"
                 android:id="@+id/imageView"
                 android:src="@drawable/images_small"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="test" />
 
         </LinearLayout>
 
@@ -117,10 +118,10 @@
                 android:height="50dip"
                 android:textSize="10sp"
                 android:layout_marginTop="20dip"
-                android:textStyle="bold"
                 android:textColor="@color/black_text_color"
                 android:text="@string/label_inventory"
-                android:layout_weight="0.08" />
+                android:layout_weight="0.14"
+                android:textStyle="normal|bold" />
 
         </LinearLayout>
 

@@ -23,6 +23,7 @@ import java.util.TreeMap;
 
 import eu.appservice.sap_scanner.BarcodeScanner;
 import eu.appservice.sap_scanner.CollectedMaterial;
+import eu.appservice.sap_scanner.FlashLightSwitcher;
 import eu.appservice.sap_scanner.Material;
 import eu.appservice.sap_scanner.PlantStrucMpk;
 import eu.appservice.sap_scanner.R;
@@ -306,7 +307,7 @@ public class RwActivity extends ActionBarActivity implements ExportDataToExcelDi
      */
     private void materialNotInDb() {
 
-        NoExistInDbDialog noExistInDbDialog=new NoExistInDbDialog(material);
+        NoExistInDbDialog noExistInDbDialog=NoExistInDbDialog.getInstance(material);
         noExistInDbDialog.show(getSupportFragmentManager(),"NO_EXIST_IN_DB");
 
     }
@@ -365,7 +366,7 @@ public class RwActivity extends ActionBarActivity implements ExportDataToExcelDi
      */
     private void writeToFile(CollectedMaterial collectedMaterial) {  //Material materialFromDatabase, Double pickingQuantity, String mpk, String budget, boolean isZero
         if (Utils.isExternalStorageWritable()) {
-            MaterialSaver materialSaver = new MaterialToFileSaver();
+            MaterialSaver materialSaver = new MaterialToFileSaver(getApplicationContext());
             if (materialSaver.save(collectedMaterial) == -1) {
                 Log.w("saveToLog", "can't save data to log file");
             }
@@ -419,6 +420,11 @@ public class RwActivity extends ActionBarActivity implements ExportDataToExcelDi
             case R.id.menu_rw_export_to_xls:
                 exportListToExcel();
                 return true;
+            case R.id.menu_rw_lamp:
+                //FlashLightOnHtc.getInstance().flashLightToggle();
+                FlashLightSwitcher.getInstance().toggleButtonImage();
+                Log.i("FlashLight", "Flash LIght on/off ");
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -447,7 +453,7 @@ public class RwActivity extends ActionBarActivity implements ExportDataToExcelDi
     @Override
     public void okClicked() {
         WriteRwToExcelAsyncTask at = new WriteRwToExcelAsyncTask(RwActivity.this);
-        at.addObserver(new MaterialToFileSaver());
+        at.addObserver(new MaterialToFileSaver(getApplicationContext()));
         at.execute();
 
         RemoveRwListFromDbDialog removeRwListFromDbDialog=new RemoveRwListFromDbDialog();
@@ -479,7 +485,9 @@ public class RwActivity extends ActionBarActivity implements ExportDataToExcelDi
         return true;
     }
 
-
-
-
+    @Override
+    protected void onStop() {
+        FlashLightSwitcher.getInstance().onStop();
+        super.onStop();
+    }
 }

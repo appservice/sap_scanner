@@ -5,7 +5,7 @@
 
    <item
         android:id="@+id/action_search"
-        android:icon="@drawable/ic_menu_add_mpk"
+        android:icon="@android:drawable/ic_menu_share"
         android:title="menu"
 
         sapScanner:showAsAction="always|withText">
@@ -13,7 +13,7 @@
 
 
 
->
+
             <item
                 android:id="@+id/menu_inventory_export"
                 android:title="Eksportuj do pliku"
@@ -23,9 +23,13 @@
                 android:id="@+id/menu_inventory_reset"
                 android:title="Kasuj"
                 sapScanner:showAsAction="ifRoom|withText"
-
-
-                />
+                android:icon="@drawable/ic_status_dialog_error" />
+<!--            <item
+                android:id="@+id/menu_inventory_lamp"
+                android:title="@string/lampa"
+                android:icon="@android:drawable/btn_star_big_on"
+                sapScanner:icon="@android:drawable/btn_star_big_on"
+                sapScanner:showAsAction="ifRoom|withText" />-->
             <!--   android:icon="@drawable/"-->
        </menu>
 

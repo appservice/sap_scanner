@@ -152,7 +152,7 @@ public class TestActivity extends ActionBarActivity implements ScanSearchFragmen
         cmDB.close();
 
         //--------add to rw log file---------------------------------------------
-        MaterialToFileSaver logFileSaver = new MaterialToFileSaver();
+        MaterialToFileSaver logFileSaver = new MaterialToFileSaver(getApplicationContext());
         logFileSaver.save(cm);
     }
 

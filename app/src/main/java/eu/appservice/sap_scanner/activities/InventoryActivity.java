@@ -36,6 +36,7 @@ import eu.appservice.sap_scanner.activities.dialogs.NoSdCardDetectedDialog;
 import eu.appservice.sap_scanner.activities.tasks.WriteInventoryToExcelAsyncTask;
 import eu.appservice.sap_scanner.databases.InventoryMaterialDbOpenHelper;
 import eu.appservice.sap_scanner.databases.MaterialsDbOpenHelper;
+import eu.appservice.sap_scanner.logfile.FlashLightOnHtc;
 import eu.appservice.sap_scanner.model.InventoredMaterial;
 
 @TargetApi(Build.VERSION_CODES.BASE)
@@ -390,6 +391,9 @@ public class InventoryActivity extends ActionBarActivity {
             case R.id.menu_inventory_reset:
                 resetInventory();
                 return true;
+/*            case R.id.menu_inventory_lamp:
+                FlashLightOnHtc.getInstance().flashLightToggle();
+                return true;*/
         }
         return true;
     }

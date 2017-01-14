@@ -3,6 +3,7 @@ package eu.appservice.sap_scanner.activities.tasks;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.media.MediaScannerConnection;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
@@ -161,6 +162,8 @@ public class WriteInventoryToExcelAsyncTask extends AsyncTask<Void, Integer, Voi
                 //---------write workbook------------------
                 workbook.write();
                 workbook.close();
+                MediaScannerConnection.scanFile(myContext, new String[] { this.excelFile.getAbsolutePath() }, null, null);
+
 
             } catch (IOException | WriteException e) {
                 e.printStackTrace();

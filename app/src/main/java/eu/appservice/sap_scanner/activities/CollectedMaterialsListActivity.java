@@ -188,7 +188,7 @@ public class CollectedMaterialsListActivity extends ActionBarActivity {
 
     //--------------------------------------------------------------------------------------------------
     private void removeFromLogFile(String removedMaterialDate) {
-        MaterialToFileSaver mtf = new MaterialToFileSaver();
+        MaterialToFileSaver mtf = new MaterialToFileSaver(getApplicationContext());
         if (mtf.removeFromLogFile(removedMaterialDate)) {
             Toast.makeText(getApplicationContext(), "Pozycja usunięta!", Toast.LENGTH_LONG).show();
         }

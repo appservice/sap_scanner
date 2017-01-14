@@ -14,11 +14,16 @@ import eu.appservice.sap_scanner.Material;
  * ﹕ SAP Skanner
  */
 public class NoExistInDbDialog extends DialogFragment{
-Material material;
+private Material material;
 
-    public NoExistInDbDialog(Material material){
+
+    public static NoExistInDbDialog getInstance(Material material){
+        NoExistInDbDialog n=new NoExistInDbDialog();
+        n.setMaterial(material);
+        return n;
+    }
+    private void setMaterial(Material material){
         this.material=material;
-
     }
 
     @Override
