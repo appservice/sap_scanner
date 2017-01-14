@@ -13,10 +13,19 @@ import android.support.v4.app.DialogFragment;
  * ﹕ SAP Skanner
  */
 public class SettignsActivityDialogFragmetn extends DialogFragment {
-    Context myContext;
+   private Context myContext;
 
-    public SettignsActivityDialogFragmetn(Context myContext) {
-        this.myContext = myContext;
+    public SettignsActivityDialogFragmetn() {
+        //   this.myContext = myContext;
+    }
+
+   public static  SettignsActivityDialogFragmetn newInstance(Context context){
+       SettignsActivityDialogFragmetn s= new SettignsActivityDialogFragmetn();
+       s.setContext(context);
+       return s;
+   }
+    private void setContext(Context context){
+        this.myContext=context;
     }
 
     @Override
@@ -24,7 +33,7 @@ public class SettignsActivityDialogFragmetn extends DialogFragment {
         //  return super.onCreateDialog(savedInstanceState);
         AlertDialog.Builder builder = new AlertDialog.Builder(myContext);
         builder.setMessage("Nie można wyświetlić");
-        builder.setPositiveButton(1, new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 

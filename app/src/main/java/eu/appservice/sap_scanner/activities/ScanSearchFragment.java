@@ -164,7 +164,7 @@ public class ScanSearchFragment extends Fragment implements View.OnClickListener
     private void materialNotInDb(Material scannedMaterial) {
         //Toast.makeText(getApplicationContext(), material.toString()+" nie istnieje w bazie danych!\n Nie dodano.", Toast.LENGTH_SHORT).show();
 
-        NoExistInDbDialog noExistInDbDialog=new NoExistInDbDialog(scannedMaterial);
+        NoExistInDbDialog noExistInDbDialog=NoExistInDbDialog.getInstance(scannedMaterial);
         noExistInDbDialog.show(getActivity().getSupportFragmentManager(), "NO_EXIST_IN_DB");
 
     }

@@ -71,6 +71,22 @@ public class PlantStrucMpk implements Serializable{
         return view_id;
     }
 
+    public void setParent_id(int parent_id) {
+        this.parent_id = parent_id;
+    }
+
+    public void setView_id(int view_id) {
+        this.view_id = view_id;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public void setBudget(String budget) {
+        this.budget = budget;
+    }
+
     /**
      * @return the budget
      */

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/activity_search_et_index"
@@ -78,15 +78,6 @@
         android:layout_marginTop="24dp"
         android:text="@string/check_box_search_view" />
 
-    <Button
-        android:id="@+id/activity_search_btn_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/activity_search_chk_more_zero"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:text="@string/btn_search_activ" />
-
     <TextView
         android:id="@+id/activity_search_tv_amount"
         android:layout_width="wrap_content"
@@ -116,5 +107,14 @@
         android:layout_below="@+id/activity_search_chk_more_zero"
         android:layout_marginTop="20dip"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/activity_search_btn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_search_activ"
+        android:layout_below="@+id/activity_search_tv_position"
+        android:layout_centerHorizontal="true"
+        android:elevation="0dp" />
 
 </RelativeLayout>

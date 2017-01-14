@@ -75,6 +75,19 @@ public class CompanyStructDbOpenHelper extends SQLiteOpenHelper {
         db.insert(TABLE_FACTORY, null, cv);
         db.close();
 
+    }    //------------add row---------------------------------------
+    public void addFactoryWithId(PlantStrucMpk plantStrucMpk) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_ID,plantStrucMpk.getId());
+        cv.put(COLUMN_PARENT_ID, plantStrucMpk.getParent_id());
+        cv.put(COLUMN_VIEW_ID, plantStrucMpk.getView_id());
+        cv.put(COLUMN_NAME, plantStrucMpk.getName());
+        cv.put(COLUMN_VALUE, plantStrucMpk.getValue());
+        cv.put(COLUMN_BUDGET, plantStrucMpk.getBudget());
+        db.insert(TABLE_FACTORY, null, cv);
+        db.close();
+
     }
 
     public int getLastId() {

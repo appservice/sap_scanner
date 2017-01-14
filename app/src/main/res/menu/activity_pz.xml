@@ -1,17 +1,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:sapScanner="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/menu_pz_show_preferences"
-        android:title="@string/menu_settings"
-        android:icon="@drawable/ic_settings"
-        sapScanner:showAsAction="withText" />
-
-    <item
-        android:id="@+id/menu_pz_add_new_material"
-        android:title="@string/menu_pz_add_new_material"
-        android:icon="@drawable/ic_add"
-        sapScanner:showAsAction="withText" />
+    <item android:title="..."
+        sapScanner:showAsAction="always|withText"
+        android:icon="@android:drawable/ic_menu_share">
+        <menu >
+            <item
+                android:id="@+id/menu_pz_add_new_material"
+                android:title="@string/menu_pz_add_new_material"
+                android:icon="@drawable/ic_add"
+                sapScanner:showAsAction="ifRoom|withText" />
+            <item
+                android:id="@+id/menu_pz_show_preferences"
+                android:title="@string/menu_settings"
+                android:icon="@drawable/ic_settings"
+                sapScanner:showAsAction="ifRoom|withText" />
+    <!--        <item
+                android:id="@+id/menu_pz_lamp"
+                android:title="@string/lampa"
+                android:icon="@android:drawable/btn_star_big_on"
+                sapScanner:icon="@android:drawable/btn_star_big_on"
+                sapScanner:showAsAction="ifRoom|withText" />-->
+        </menu>
+    </item>
 
 
 </menu>

@@ -55,7 +55,7 @@ public class PzListActivity extends ActionBarActivity implements WarningDialogFr
 //--------------------------------delate from list and db-------------------------------------------
     private void deleteStoredMaterial() {
        //-------------dialogFragment warning ------------------
-        WarningDialogFragment dialog=new WarningDialogFragment("Czy usunąć pozycję "+(pzMaterials.size()-longClickedPosition)+"?");
+        WarningDialogFragment dialog=WarningDialogFragment.getInstance("Czy usunąć pozycję "+(pzMaterials.size()-longClickedPosition)+"?");
         dialog.show(getSupportFragmentManager(),"DIALOG_WARNING");
         //if on Dialog clicked ok will execute method okClicked
 

@@ -22,6 +22,7 @@ import java.util.Map.Entry;
 import java.util.TreeMap;
 
 import eu.appservice.sap_scanner.BarcodeScanner;
+import eu.appservice.sap_scanner.FlashLightSwitcher;
 import eu.appservice.sap_scanner.Material;
 import eu.appservice.sap_scanner.R;
 import eu.appservice.sap_scanner.ScannedMaterial;
@@ -305,6 +306,10 @@ public class PzActivity extends ActionBarActivity {
             case R.id.menu_pz_add_new_material:
                 startActivity(new Intent(getApplicationContext(), NewMaterialActivity.class));
                 return true;
+    /*        case R.id.menu_pz_lamp:
+                FlashLightSwitcher.getInstance().flashLightToggle();
+
+                return true;*/
         }
         return super.onOptionsItemSelected(item);
     }

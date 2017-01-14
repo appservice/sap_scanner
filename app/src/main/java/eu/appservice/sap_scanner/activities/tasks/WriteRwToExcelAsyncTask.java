@@ -3,6 +3,7 @@ package eu.appservice.sap_scanner.activities.tasks;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.media.MediaScannerConnection;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -83,10 +85,12 @@ public class WriteRwToExcelAsyncTask extends AsyncTask<Void, Integer, Void> impl
 
             try {
 
+
                 // String fileName = "rw_" + nowDate() + ".xls";
                 this.excelFile = new File(Environment.getExternalStorageDirectory() + File.separator + myContext.getString(R.string.main_folder) + File.separator +
                         getFileName());
 
+                this.excelFile.setLastModified(new Date().getTime());
 
                 WritableWorkbook workbook = Workbook.createWorkbook(this.excelFile);
                 WritableSheet sheet = workbook.createSheet("Wszystkie MPK", 0);
@@ -200,6 +204,8 @@ public class WriteRwToExcelAsyncTask extends AsyncTask<Void, Integer, Void> impl
                 //---------write workbook------------------
                 workbook.write();
                 workbook.close();
+                MediaScannerConnection.scanFile(myContext, new String[]{excelFile.getAbsolutePath()}, null, null);
+
                   /*  for (File f : filesForDelete) {
                         if (!f.delete())                //delete image file with sing which will be write in excel
                             Log.i("file", f.getName() + ": can't delete this file");
@@ -244,8 +250,8 @@ public class WriteRwToExcelAsyncTask extends AsyncTask<Void, Integer, Void> impl
 
         progressDialog.dismiss();
 
-        Toast.makeText(myContext, "Plik " + excelFile.getName() + " został utworzony.",
-                Toast.LENGTH_LONG).show();
+        Toast.makeText(myContext, "Plik " + excelFile.getName() + " został utworzony w "
+                + excelFile.getPath(), Toast.LENGTH_LONG).show();
         if (excelFile.exists()) {
 
             materialsDb.close();

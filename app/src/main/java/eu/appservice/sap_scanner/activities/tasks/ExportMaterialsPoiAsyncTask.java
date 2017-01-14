@@ -3,6 +3,7 @@ package eu.appservice.sap_scanner.activities.tasks;
 import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.media.MediaScannerConnection;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
@@ -51,7 +52,7 @@ public class ExportMaterialsPoiAsyncTask extends AsyncTask<Void, Integer, Void> 
 
         materialsDb = new MaterialsDbOpenHelper(myContext);
 
-        mainFolderName= myContext.getString(R.string.main_folder);
+        mainFolderName = myContext.getString(R.string.main_folder);
 
 
         progressDialog = new ProgressDialog(myContext);
@@ -69,6 +70,8 @@ public class ExportMaterialsPoiAsyncTask extends AsyncTask<Void, Integer, Void> 
     @TargetApi(Build.VERSION_CODES.CUPCAKE)
     @Override
     protected Void doInBackground(Void... params) {
+
+
         try {
 
  /*           workbook = Workbook.createWorkbook(new File(Environment
@@ -139,17 +142,16 @@ public class ExportMaterialsPoiAsyncTask extends AsyncTask<Void, Integer, Void> 
 
             }
             //sheet.autoSizeColumn(3);
-
-            FileOutputStream fos = new FileOutputStream(new File(Environment
+            File file = new File(Environment
                     .getExternalStorageDirectory()
-                    + File.separator
-                    + mainFolderName
-                    + File.separator
-                    + fileName));
+                    + File.separator + mainFolderName
+                    + File.separator + fileName);
+            FileOutputStream fos = new FileOutputStream(file);
 
             workbook.write(fos);
             fos.close();
             materialsDb.close();
+            MediaScannerConnection.scanFile(myContext, new String[]{file.getAbsolutePath()}, null, null);
 
 
         } catch (IOException e) {
@@ -171,7 +173,7 @@ public class ExportMaterialsPoiAsyncTask extends AsyncTask<Void, Integer, Void> 
 
         progressDialog.dismiss();
 
-        Toast.makeText(myContext, "Plik " + fileName + " wyeksportowany do katalogu "+mainFolderName+".",
+        Toast.makeText(myContext, "Plik " + fileName + " wyeksportowany do katalogu " + mainFolderName + ".",
                 Toast.LENGTH_LONG).show();
 
     }

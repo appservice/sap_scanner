@@ -1,5 +1,7 @@
 package eu.appservice.sap_scanner.logfile;
 
+import android.content.Context;
+import android.media.MediaScannerConnection;
 import android.os.Environment;
 import android.util.Log;
 
@@ -14,6 +16,7 @@ import java.io.OutputStreamWriter;
 
 import eu.appservice.sap_scanner.CollectedMaterial;
 import eu.appservice.sap_scanner.Utils;
+import eu.appservice.sap_scanner.activities.tasks.ImportMaterialsEventListener;
 
 
 /**
@@ -21,10 +24,12 @@ import eu.appservice.sap_scanner.Utils;
  * ﹕ SAP Skaner
  */
 public class MaterialToFileSaver implements MaterialSaver, InterfaceObserver {
-    private static final String LOG_TXT_FILE = "magazyn.txt";
-    File file;
+    private static final String LOG_TXT_FILE = "magazyn_log.txt";
+ private   File file;
+    private Context myContext;
 
-    public MaterialToFileSaver() {
+    public MaterialToFileSaver(Context context) {
+        this.myContext=context;
         try {
             this.file = new File(Environment.getExternalStorageDirectory(), LOG_TXT_FILE);
             {
@@ -54,6 +59,8 @@ public class MaterialToFileSaver implements MaterialSaver, InterfaceObserver {
             bf.write(collectedMaterialTextFormat(collectedMaterial));
             bf.close();
             fw.close();
+            MediaScannerConnection.scanFile(myContext, new String[] { file.getAbsolutePath() }, null, null);
+
 
             return 1;
         } catch (IOException e) {
@@ -83,6 +90,7 @@ public class MaterialToFileSaver implements MaterialSaver, InterfaceObserver {
         sb.append(collectedMaterial.getCollectedQuantity().toString()).append(";");
         sb.append(collectedMaterial.getUnit()).append(";");
         sb.append(collectedMaterial.getStore()).append(";");
+        sb.append(collectedMaterial.getMpk()).append(";");
         sb.append(collectedMaterial.getBudget()).append(";");
         sb.append(textWhenIsZero).append(";");
         sb.append(collectedMaterial.getName()).append(";");
@@ -94,7 +102,7 @@ public class MaterialToFileSaver implements MaterialSaver, InterfaceObserver {
     }
 
     //---------------when excel file is created its add this information to log file-------------
-    private void saveMarkerTxtFile() {
+    private void saveMarkerTxtFile(String textToLog) {
 
         try {
 
@@ -104,6 +112,8 @@ public class MaterialToFileSaver implements MaterialSaver, InterfaceObserver {
             bf.write("\nW dniu " + saveDate() + " wykonano RW. \n\n");
             bf.close();
             fw.close();
+            MediaScannerConnection.scanFile(myContext, new String[] { file.getAbsolutePath() }, null, null);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -112,12 +122,17 @@ public class MaterialToFileSaver implements MaterialSaver, InterfaceObserver {
 
     @Override
     public void update() {
-        saveMarkerTxtFile();
+        saveMarkerTxtFile("");
     }
 
     @Override
     public void update(InterfaceObservable o, Object arg) {
     }
+/*    if (o instanceof ImportMaterialsEventListener) {
+        publishProgress( numberOfRows++);
+
+
+    }*/
 
     private String saveDate() {
         return Utils.nowDate();
@@ -146,8 +161,10 @@ public class MaterialToFileSaver implements MaterialSaver, InterfaceObserver {
                 fos.close();
                 reader.close();
                 if (successful) {
+                    MediaScannerConnection.scanFile(myContext, new String[] { file.getAbsolutePath() }, null, null);
 
                     return true;
+
 
                 }
 

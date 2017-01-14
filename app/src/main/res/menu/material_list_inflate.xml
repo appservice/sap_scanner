@@ -5,9 +5,11 @@
     <item
         android:id="@+id/schowPickedSearchActivity"
         android:title="Wyszukaj"
-        sapScanner:showAsAction="ifRoom|withText"/>
+        sapScanner:showAsAction="ifRoom|withText"
+        android:icon="@drawable/ic_search2" />
     <item android:id="@+id/materialListInflateMenuSign"
         android:title="Podpisz"
-        sapScanner:showAsAction="ifRoom|withText"/>
+        sapScanner:showAsAction="ifRoom|withText"
+        android:icon="@drawable/ic_signature_big" />
 
 </menu>

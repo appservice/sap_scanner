@@ -37,13 +37,13 @@
     <string name="delete">Delete</string>
     <string name="dialogMpkMessage">Insert data:</string>
     <string name="dialogMpkTitle">Add MPK</string>
-    <string name="excel_with_materials"></string>
+    <string name="excel_with_materials">ex</string>
     <string name="hello_world">The program is made by  \n Lukasz Mochel</string>
     <string name="index_string">Index:</string>
     <string name="inventarisation_place_string">Invetarization place</string>
     <string name="is_only_digits_title">Only digits index</string>
     <string name="label_inventory">Inventory</string>
-    <string name="main_folder"></string>
+    <string name="main_folder">Sap_scaner</string>
     <string name="menu_add">Add</string>
     <string name="menu_add_new_material">Add new material</string>
     <string name="menu_pz_add_new_material">Add material</string>

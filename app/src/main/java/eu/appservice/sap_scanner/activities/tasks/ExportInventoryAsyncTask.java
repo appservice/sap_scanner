@@ -3,6 +3,7 @@ package eu.appservice.sap_scanner.activities.tasks;
 import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.media.MediaScannerConnection;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
@@ -68,14 +69,15 @@ import jxl.write.biff.RowsExceededException;
 
         @Override
         protected Void doInBackground(Void... params) {
+            File file=new File(Environment
+                    .getExternalStorageDirectory().getPath()
+                    + "/" + fileName);
 
             try {
 
                 this.fileName = "rw_" + nowDate() + ".xls";
 
-                WritableWorkbook workbook = Workbook.createWorkbook(new File(Environment
-                        .getExternalStorageDirectory().getPath()
-                        + "/" + fileName));
+                WritableWorkbook workbook = Workbook.createWorkbook(file);
                 WritableSheet sheet = workbook.createSheet("Wszystkie MPK", 0);
 
                 //---------cell format--------------------
@@ -175,6 +177,8 @@ import jxl.write.biff.RowsExceededException;
                         if(!f.delete())                //delete image file with sing which will be write in excel
                             Log.i("file", f.getName() + ": can't delete this file");
                     }
+                    MediaScannerConnection.scanFile(myContext, new String[] { file.getAbsolutePath() }, null, null);
+
                 } catch (WriteException e) {
                     e.printStackTrace();
 

@@ -21,6 +21,19 @@
         android:key="pref_default_budget"
         android:title="Domyślny budżet"
         android:summary="Ustaw domyślny budżet zużycia" />
+
+    <Preference
+        android:key="pref_export_mpk"
+        android:title="Eksportuj MPK"
+        android:summary="Eksportuje bazę MPK do pliku csv"
+
+        />
+    <Preference
+        android:key="pref_import_mpk"
+        android:title="Importuj MPK"
+        android:summary="Kasuje starą bazę MPK i importuje dane z plik csv"
+
+        />
     <Preference
         android:key="pref_about_program"
         android:title="O programie"
