@@ -1,7 +1,7 @@
 package eu.appservice.sap_scanner.activities;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,7 +21,7 @@ import eu.appservice.sap_scanner.logfile.StoredMaterial;
 import eu.appservice.sap_scanner.model.InventoredMaterial;
 
 
-public class InventoryListActivity extends ActionBarActivity implements WarningDialogFragment.Communicator {
+public class InventoryListActivity extends AppCompatActivity implements WarningDialogFragment.Communicator {
 
     private List<InventoredMaterial> inventoredMaterials;
     private int longClickedPosition;

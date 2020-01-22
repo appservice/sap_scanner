@@ -7,12 +7,10 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+        <RelativeLayout
             android:id="@+id/autoCompleteTextViewMpkRwActiv"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            tools:context=".RwActivity"
             android:gravity="right">
 
             <ImageButton

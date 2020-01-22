@@ -37,7 +37,7 @@
     <string name="delete">Delete</string>
     <string name="dialogMpkMessage">Insert data:</string>
     <string name="dialogMpkTitle">Add MPK</string>
-    <string name="excel_with_materials">ex</string>
+    <string name="excel_with_materials">zrzut_stanu.xls</string>
     <string name="hello_world">The program is made by  \n Lukasz Mochel</string>
     <string name="index_string">Index:</string>
     <string name="inventarisation_place_string">Invetarization place</string>
@@ -51,5 +51,51 @@
     <string name="message_collected">Dispatched</string>
     <string name="msg_install_barcode_scanner">Install BarcodeScanner app!</string>
     <string name="pref_flash">Flashlight settings</string>
+    <string name="lampa">lamp</string>
+    <string name="list">list</string>
+    <string name="scan_text">Scan</string>
+    <string name="save">Save</string>
+    <string name="rw_search_in_database">Search in DB</string>
+    <string name="pref_renew_mat_dat_title">Load DB</string>
+    <string name="pref_renew_mat_dat_sum">Copy materials DB from file zrzut_stanu.xls</string>
+    <string name="pref_is_only_digits_sum">Shold be show digit</string>
+    <string name="pref_is_auto_flash_off_title">Automatic flashlight off</string>
+    <string name="pref_is_auto_flash_off_summ">Automatic flashlight off</string>
+    <string name="sdcard_magazyn">/sdcard/magazyn.txt</string>
+    <string name="signature">Signature</string>
+    <string name="signatures_folder">Signatures</string>
+    <string name="string_amount">Amount</string>
+    <string name="textViewTitleAddActiv">Add new Material to DB</string>
+    <string name="title_activity_file_chooser">Files</string>
+    <string name="title_activity_info">About</string>
+    <string name="title_activity_inventory_list">List of inventory</string>
+    <string name="title_activity_main">Barcode Scanner</string>
+    <string name="title_activity_new_material">Main Activiti</string>
+    <string name="title_activity_preferences">Preference</string>
+    <string name="title_activity_pz_list">PZ List</string>
+    <string name="title_activity_rw">RW</string>
+    <string name="toast_text_set_amount_pz_activ">Not add. Fill amount!</string>
+    <string name="tvMpkBudgetString">Budget</string>
+    <string name="tvMpkNameString">Name of machine/line</string>
+    <string name="tvMpkValueString">Value MPK:</string>
+    <string name="txt_index_search_activ">Index:</string>
+    <string name="txt_name_search_activ">Name:</string>
+    <string name="txt_stock_search_activ">Stock:</string>
+    <string name="warning_fill_amount">Fill amount</string>
+    <string name="warning_incorrect_data_in_imported_excel_file">Columnt 4 must be an amount</string>
+    <string name="warning_scan_material">Scan / choose material</string>
+    <string name="menu_rw_export">Export to excel</string>
+    <string name="mpk">MPK</string>
+    <string name="scan">Scan</string>
+
+    <string-array name="unit_types_add_activ" >
+        <item>SZT</item>
+        <item>M</item>
+        <item>MM</item>
+        <item>KG</item>
+        <item>L</item>
+        <item>ROL</item>
+        <item>KOM</item>
+    </string-array>
 
 </resources>

@@ -9,7 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -34,7 +34,7 @@ import eu.appservice.sap_scanner.databases.CompanyStructDbOpenHelper;
  * ﹕ ${PROJECT_NAME}
  */
 @TargetApi(Build.VERSION_CODES.BASE)
-public class MpkListActivity extends ActionBarActivity {
+public class MpkListActivity extends AppCompatActivity {
 
 
     CompanyStructDbOpenHelper db;

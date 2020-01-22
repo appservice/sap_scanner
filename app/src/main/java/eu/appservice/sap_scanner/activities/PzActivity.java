@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,7 +22,6 @@ import java.util.Map.Entry;
 import java.util.TreeMap;
 
 import eu.appservice.sap_scanner.BarcodeScanner;
-import eu.appservice.sap_scanner.FlashLightSwitcher;
 import eu.appservice.sap_scanner.Material;
 import eu.appservice.sap_scanner.R;
 import eu.appservice.sap_scanner.ScannedMaterial;
@@ -33,7 +32,7 @@ import eu.appservice.sap_scanner.logfile.FlashLightOnHtc;
 import eu.appservice.sap_scanner.logfile.StoredMaterial;
 
 
-public class PzActivity extends ActionBarActivity {
+public class PzActivity extends AppCompatActivity {
     private ImageButton imgBtnScanPzActiv;
     private EditText editTextAddedValue;
     private Button btnAddPzActiv;

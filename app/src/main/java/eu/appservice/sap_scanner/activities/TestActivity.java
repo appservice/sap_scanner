@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,7 +31,7 @@ import eu.appservice.sap_scanner.logfile.MaterialToFileSaver;
  * Created by Lukasz on 18.02.14.
  * ﹕ SAP Skanner
  */
-public class TestActivity extends ActionBarActivity implements ScanSearchFragment.OnGetMaterialFromDb {
+public class TestActivity extends AppCompatActivity implements ScanSearchFragment.OnGetMaterialFromDb {
 
     private static final int MPK_REQUEST = 0;
     private static final int FILE_PATH_REQUEST=4;

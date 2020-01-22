@@ -7,7 +7,6 @@
 
         sapScanner:showAsAction="ifRoom|withText"
         sapScanner:icon="@drawable/ic_status_dialog_error"
-        android:showAsAction="ifRoom|withText"
         android:icon="@drawable/ic_status_dialog_error"
 />
     <!-- never|-->
@@ -16,7 +15,6 @@
         android:title="Zapisz    "
         sapScanner:showAsAction="ifRoom|withText"
         sapScanner:icon="@drawable/ic_status_dialog_ok"
-        android:showAsAction="ifRoom|withText"
         android:icon="@drawable/ic_status_dialog_ok"
 
        />

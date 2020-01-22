@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,7 +25,7 @@ import eu.appservice.sap_scanner.databases.MaterialsDbOpenHelper;
  * ﹕ SAP Skanner
  */
 @TargetApi(Build.VERSION_CODES.BASE)
-public class NewMaterialActivity extends ActionBarActivity {
+public class NewMaterialActivity extends AppCompatActivity {
 
 
 

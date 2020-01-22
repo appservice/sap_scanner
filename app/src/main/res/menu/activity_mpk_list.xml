@@ -8,7 +8,6 @@
         android:title="@string/menu_add"
 
         android:icon="@drawable/ic_add"
-        android:showAsAction="always|withText"
         android:titleCondensed="@string/menu_add"
         sapScanner:showAsAction="ifRoom|withText"
 

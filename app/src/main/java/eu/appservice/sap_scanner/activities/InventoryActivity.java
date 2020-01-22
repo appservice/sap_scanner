@@ -7,11 +7,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,11 +20,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Date;
 import java.util.Map;
 import java.util.TreeMap;
 
-import eu.appservice.sap_scanner.CollectedMaterial;
 import eu.appservice.sap_scanner.IntentAvailableChecker;
 import eu.appservice.sap_scanner.Material;
 import eu.appservice.sap_scanner.R;
@@ -36,11 +32,10 @@ import eu.appservice.sap_scanner.activities.dialogs.NoSdCardDetectedDialog;
 import eu.appservice.sap_scanner.activities.tasks.WriteInventoryToExcelAsyncTask;
 import eu.appservice.sap_scanner.databases.InventoryMaterialDbOpenHelper;
 import eu.appservice.sap_scanner.databases.MaterialsDbOpenHelper;
-import eu.appservice.sap_scanner.logfile.FlashLightOnHtc;
 import eu.appservice.sap_scanner.model.InventoredMaterial;
 
 @TargetApi(Build.VERSION_CODES.BASE)
-public class InventoryActivity extends ActionBarActivity {
+public class InventoryActivity extends AppCompatActivity {
     private Button btnSaveInvActiv;
     private Button btnPlaceInvActiv;
     private Button btnShowListInvAcitv;

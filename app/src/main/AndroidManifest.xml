@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="eu.appservice.sap_scanner" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="eu.appservice.sap_scanner">
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -9,15 +10,17 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:fullBackupContent="true"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat" >
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/Theme.AppCompat"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/title_activity_main"
             android:permission="android.permission.VIBRATE"
-            android:screenOrientation="portrait"
-         >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +32,7 @@
         <activity
             android:name=".activities.SettingsActivity"
             android:parentActivityName=".activities.MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eu.appservice.sap_scanner.activities.MainActivity" />
@@ -43,7 +46,7 @@
             android:name=".activities.PzActivity"
             android:label="PZ"
             android:parentActivityName=".activities.MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eu.appservice.sap_scanner.activities.MainActivity" />
@@ -54,7 +57,7 @@
             android:name=".activities.NewMaterialActivity"
             android:label="Dodaj materiał"
             android:parentActivityName=".activities.MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eu.appservice.sap_scanner.activities.MainActivity" />
@@ -65,7 +68,7 @@
             android:name=".activities.RwActivity"
             android:label="@string/title_activity_rw"
             android:parentActivityName=".activities.MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eu.appservice.sap_scanner.activities.MainActivity" />
@@ -76,19 +79,19 @@
             android:name=".activities.MpkListActivity"
             android:label="Lista MPK"
             android:parentActivityName=".activities.RwActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eu.appservice.sap_scanner.activities.RwActivity" />
         </activity>
-        >
+
 
         <!-- Activity Collected Material List -->
         <activity
             android:name=".activities.CollectedMaterialsListActivity"
             android:label="Lista RW"
             android:parentActivityName=".activities.RwActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eu.appservice.sap_scanner.activities.RwActivity" />
@@ -99,7 +102,7 @@
             android:name=".activities.InventoryActivity"
             android:label="Inwentaryzacja"
             android:parentActivityName=".activities.MainActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eu.appservice.sap_scanner.activities.MainActivity" />
@@ -116,7 +119,7 @@
             android:name=".activities.SearchCollectedActivity"
             android:label="Szukaj w pobranych"
             android:parentActivityName=".activities.CollectedMaterialsListActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eu.appservice.sap_scanner.activities.CollectedMaterialsListActivity" />
@@ -128,7 +131,7 @@
         <activity
             android:name=".activities.TestActivity"
             android:label="Test Activity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eu.appservice.sap_scanner.activities.CollectedMaterialsListActivity" />
@@ -138,7 +141,7 @@
         <activity
             android:name=".activities.InfoActivity"
             android:label="@string/title_activity_info"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eu.appservice.sap_scanner.activities.SettingsActivity" />
@@ -148,21 +151,20 @@
         <activity
             android:name=".activities.PzListActivity"
             android:label="@string/title_activity_pz_list"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eu.appservice.sap_scanner.activities.PzActivity" />
         </activity>
         <activity
             android:name=".activities.fileChooser.FileChooserActivity"
-            android:label="@string/title_activity_file_chooser" >
-        </activity>
+            android:label="@string/title_activity_file_chooser"></activity>
         <!--inventory  list....................................- -->
         <activity
             android:name=".activities.InventoryListActivity"
-            android:screenOrientation="portrait"
             android:label="@string/title_activity_inventory_list"
-            android:parentActivityName=".activities.InventoryActivity" >
+            android:parentActivityName=".activities.InventoryActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="eu.appservice.sap_scanner.activities.InventoryActivity" />

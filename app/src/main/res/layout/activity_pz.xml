@@ -20,8 +20,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/activity_pz_ibtn_scan"
         android:layout_marginRight="10dp"
-        android:text="Skanuj"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:text="@string/scan"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_marginEnd="10dp"
+        android:layout_alignEnd="@+id/activity_pz_ibtn_scan" />
 
     <ImageButton
         android:id="@+id/activity_pz_ibtn_scan"

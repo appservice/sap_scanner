@@ -3,7 +3,7 @@ package eu.appservice.sap_scanner.activities;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +17,7 @@ import eu.appservice.sap_scanner.activities.tasks.SearchCollectedMaterialsAsyncT
  * Created by Lukasz on 01.10.13.
  */
 @TargetApi(Build.VERSION_CODES.BASE)
-public class SearchCollectedActivity extends ActionBarActivity {
+public class SearchCollectedActivity extends AppCompatActivity {
     private EditText editTextIndexSearchPickedActiv;
     private EditText editTextNameSearchPickedActiv;
     private EditText editTextMpkSearchPickedActiv;

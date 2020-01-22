@@ -6,7 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,7 +35,7 @@ import eu.appservice.sap_scanner.logfile.MaterialToFileSaver;
  * ﹕ ${PROJECT_NAME}
  */
 @TargetApi(Build.VERSION_CODES.BASE)
-public class CollectedMaterialsListActivity extends ActionBarActivity {
+public class CollectedMaterialsListActivity extends AppCompatActivity {
 
 
     //

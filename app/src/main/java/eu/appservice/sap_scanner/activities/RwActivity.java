@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -41,7 +41,7 @@ import eu.appservice.sap_scanner.logfile.MaterialSaver;
 import eu.appservice.sap_scanner.logfile.MaterialToFileSaver;
 
 
-public class RwActivity extends ActionBarActivity implements ExportDataToExcelDialog.Communicator, RemoveRwListFromDbDialog.Communicator {
+public class RwActivity extends AppCompatActivity implements ExportDataToExcelDialog.Communicator, RemoveRwListFromDbDialog.Communicator {
 
     private Button showMpkBtn;
 

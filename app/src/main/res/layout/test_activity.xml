@@ -10,7 +10,6 @@
     tools:context=".activities.TestActivity">
 
     <LinearLayout
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">

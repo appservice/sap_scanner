@@ -3,7 +3,7 @@ package eu.appservice.sap_scanner.activities.fileChooser;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,7 +21,7 @@ import java.util.List;
 import eu.appservice.sap_scanner.R;
 import eu.appservice.sap_scanner.Utils;
 
-public class FileChooserActivity extends ActionBarActivity {//
+public class FileChooserActivity extends AppCompatActivity {//
 
 
     private File currentDir;

@@ -8,7 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,7 +29,7 @@ import eu.appservice.sap_scanner.activities.tasks.SearchMaterialsAsyncTask;
 import eu.appservice.sap_scanner.adapters.MaterialsArrayAdapter;
 
 @TargetApi(Build.VERSION_CODES.BASE)
-public class SearchActivity extends ActionBarActivity implements SearchMaterialsAsyncTask.GetAsyncTaskListener {
+public class SearchActivity extends AppCompatActivity implements SearchMaterialsAsyncTask.GetAsyncTaskListener {
     private EditText editTextIndexSearchActiv;
     private EditText editTextNameSearchActiv;
     private TextView textViewUnitSearchActiv;

@@ -12,7 +12,7 @@ import android.graphics.Path;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,7 +28,7 @@ import eu.appservice.sap_scanner.Utils;
 
 
 @TargetApi(Build.VERSION_CODES.BASE)
-public class FingerPaintActivity extends ActionBarActivity// implements ColorPickerDialog.OnColorChangedListener  //Graphics
+public class FingerPaintActivity extends AppCompatActivity// implements ColorPickerDialog.OnColorChangedListener  //Graphics
 {
     private String SIGN_DIR_NAME;     //implements ColorPickerDialog.OnColorChangedListener
     private Paint mPaint;

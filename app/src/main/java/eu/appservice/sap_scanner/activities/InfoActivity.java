@@ -1,13 +1,13 @@
 package eu.appservice.sap_scanner.activities;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import eu.appservice.sap_scanner.R;
 
-public class InfoActivity extends ActionBarActivity {
+public class InfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
